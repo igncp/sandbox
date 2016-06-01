@@ -9,6 +9,7 @@ if [ -z $MACHINE_EXISTS ]; then
   vagrant up
 else
   echo "Box exists"
+  vagrant resume
   vagrant provision
 fi
 

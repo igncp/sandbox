@@ -41,10 +41,11 @@ fi
 if [ ! -d ~/repository ]; then
   echo "cloning and setting up the repository"
   git clone https://github.com/angular/angular.git repository
+  cd repository
+  git reset --hard 420e83a396ed5ae
 fi
 
-cd repository
-git reset --hard 420e83a396ed5ae
+appendIfLineDoesNotExist 'cd ~/repository' ~/.bashrc
 
 if [ ! -d ~/repository/node_modules ]; then
   export PATH=$PATH:/home/$USER/.nodenv/bin
@@ -53,8 +54,6 @@ if [ ! -d ~/repository/node_modules ]; then
   cd ~/repository
   npm i
 fi
-
-appendIfLineDoesNotExist 'cd ~/repository' ~/.bashrc
 
 cd ~/repository
 sed -i '/set -e -o pipefail/d' build.sh
