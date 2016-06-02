@@ -7,7 +7,7 @@ appendIfLineDoesNotExist() { LINE=$1 && FILE=$2 && grep -q -F $LINE $FILE || ech
 if ! type tree ; then
   echo "install basic packages"
   sudo apt-get update
-  sudo apt-get install -y curl git tree
+  sudo apt-get install -y curl git unzip tree
 fi
 
 if [ ! -f ~/node-installation-finished ]; then
@@ -40,14 +40,15 @@ fi
 
 if [ ! -d ~/repository ]; then
   echo "cloning and setting up the repository"
-  git clone https://github.com/angular/angular.git repository
-  cd repository
+  git clone https://github.com/angular/angular.git ~/repository
+  cd ~/repository
   git reset --hard 420e83a396ed5ae
 fi
 
 appendIfLineDoesNotExist 'cd ~/repository' ~/.bashrc
 
 if [ ! -d ~/repository/node_modules ]; then
+  echo "installing node modules"
   export PATH=$PATH:/home/$USER/.nodenv/bin
   eval "$(nodenv init -)"
   echo "installing modules"
