@@ -1,5 +1,9 @@
 set -e
 
+if [ ! -f /etc/bash_completion.d/vagrant ]; then
+  sudo wget https://raw.github.com/kura/vagrant-bash-completion/master/etc/bash_completion.d/vagrant -O /etc/bash_completion.d/vagrant
+fi
+
 if type vagrant &> /dev/null ; then
   echo "vagrant is already installed"
   exit 0

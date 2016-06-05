@@ -8,6 +8,7 @@ if ! type tree ; then
   echo "install basic packages"
   sudo apt-get update
   sudo apt-get install -y curl git unzip tree
+  git config --global user.email "you@example.com" && git config --global user.name "Your Name"
 fi
 
 if [ ! -f ~/node-installation-finished ]; then
@@ -25,6 +26,10 @@ if [ ! -f ~/node-installation-finished ]; then
     nodenv global 5.6.0 && \
     touch ~/node-installation-finished
 fi
+
+export PATH=$PATH:/home/$USER/.nodenv/bin
+eval "$(nodenv init -)"
+NODE_MODULES_PATH=~/.nodenv/versions/5.6.0/lib/node_modules/
 
 if [ ! -d /usr/local/dart-sdk ]; then
   echo "downloading dart"
@@ -45,19 +50,48 @@ if [ ! -d ~/repository ]; then
   git reset --hard 420e83a396ed5ae
 fi
 
+if [ ! -d ~/logs ]; then
+  mkdir ~/logs
+fi
+
+appendIfLineDoesNotExist 'export PATH=$PATH:/home/vagrant/.nodenv/versions/5.6.0/bin/' ~/.bashrc && \
+appendIfLineDoesNotExist 'alias rm="rm -rf"' ~/.bashrc
 appendIfLineDoesNotExist 'cd ~/repository' ~/.bashrc
 
+touch ~/.vimrc
+appendIfLineDoesNotExist 'set nobackup' ~/.vimrc
+appendIfLineDoesNotExist 'set number' ~/.vimrc
+appendIfLineDoesNotExist 'map ,e :e <C-R>=expand("%:p:h") . "/" <CR>' ~/.vimrc
+
+if [[ $(ps aux | grep "node_modules\/forever" | grep "http-server" | wc -l) = "0" ]]; then
+  $NODE_MODULES_PATH/forever/bin/forever start -a -l ~/logs/forever.log -- $NODE_MODULES_PATH/http-server/bin/http-server ~/repository/dist -p 9000 -c-1
+fi
+
 if [ ! -d ~/repository/node_modules ]; then
-  echo "installing node modules"
-  export PATH=$PATH:/home/$USER/.nodenv/bin
-  eval "$(nodenv init -)"
   echo "installing modules"
   cd ~/repository
   npm i
 fi
 
-cd ~/repository
-sed -i '/set -e -o pipefail/d' build.sh
-# sh build
+if ! type forever ; then
+  npm i -g http-server forever
+fi
+
+if [ ! -d ~/repository/dist ]; then
+  cd ~/repository && git reset --hard HEAD && ./build.sh
+fi
+
+if [[ $(cd ~/repository && git rev-parse HEAD | grep -o ^......) = "420e83" ]]; then
+  echo "commiting dist"
+  cd ~/repository && \
+    git reset --hard HEAD && \
+    sed -i '/set -e -o pipefail/d' build.sh && \
+    sed -i '/\/dist\//d' .gitignore && \
+    sed -i '/*.js_/d' .gitignore && \
+    sed -i '/*.js.map/d' .gitignore && \
+    time ./build.sh;
+    git add -A . && \
+    git commit -m "dist" --quiet
+fi
 
 echo "finished provisioning"
