@@ -1,0 +1,8 @@
+1. `'@angular/platform-browser'` contains the bootstrap function, and the `KeyEventsPlugin` helpers wrapper. It imports the `Component` decorator from `'@angular/core'`
+
+2 Angular provides the extra sugar for the event syntax `(keydown.NAME_OF_A_KEY)`, which can be chained, and does not need to specify that you need that capability.
+
+3 There is some sort of precedence order between keys, no matter which order you pressed them. E.g. alt + control or control + alt will be `control.alt`.
+
+4  On a component template, there is the possibility to pass variables that angular provide and that begin with a dollar, like $event.
+

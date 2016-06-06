@@ -1,0 +1,4 @@
+1. It just imports one helper method to check the existence of browser errors: verifyNoBrowserErrors (from '@angular/platform-browser/testing/e4e_util'). This is because a lot of variables used are in the global scope, like protactor.
+
+2. The protactor configuration is at the top level of the repository. For the js case, it runs it three times, one with the plain config, the next time with running a benchmark and finally with a benchpress firefox extension configuration.
+
