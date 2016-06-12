@@ -1,0 +1,231 @@
++ Tree:
+  .
+  ├── modules
+  │   ├── @angular
+  │   │   ├── compiler_cli
+  │   │   │   └── README.md
+  │   │   ├── docs
+  │   │   │   ├── bundles
+  │   │   │   │   └── overview.md
+  │   │   │   ├── change_detection
+  │   │   │   │   ├── change_detection.md
+  │   │   │   │   ├── expressions.md
+  │   │   │   │   └── record.md
+  │   │   │   ├── cheatsheet
+  │   │   │   │   ├── bootstrapping.md
+  │   │   │   │   ├── built-in-directives.md
+  │   │   │   │   ├── class-decorators.md
+  │   │   │   │   ├── component-configuration.md
+  │   │   │   │   ├── dependency-injection.md
+  │   │   │   │   ├── directive-and-component-decorators.md
+  │   │   │   │   ├── directive-configuration.md
+  │   │   │   │   ├── forms.md
+  │   │   │   │   ├── lifecycle hooks.md
+  │   │   │   │   ├── routing.md
+  │   │   │   │   └── template-syntax.md
+  │   │   │   ├── core
+  │   │   │   │   ├── 00_index.md
+  │   │   │   │   ├── 01_templates.md
+  │   │   │   │   ├── 02_directives.md
+  │   │   │   │   ├── 03_pipes.md
+  │   │   │   │   ├── 04_decorator_directive.md
+  │   │   │   │   ├── 05_component_directive.md
+  │   │   │   │   ├── 06_viewport_directive.md
+  │   │   │   │   ├── 07_services.md
+  │   │   │   │   ├── 08_lifecycle.md
+  │   │   │   │   ├── 09_compilation.md
+  │   │   │   │   ├── 10_view.md
+  │   │   │   │   ├── 11_shadow_dom.md
+  │   │   │   │   └── 12_zones.md
+  │   │   │   ├── di
+  │   │   │   │   ├── di_advanced.md
+  │   │   │   │   └── di.md
+  │   │   │   ├── migration
+  │   │   │   │   └── kebab-case.md
+  │   │   │   └── web_workers
+  │   │   │       └── web_workers.md
+  │   │   ├── examples
+  │   │   │   └── README.md
+  │   │   ├── router-deprecated
+  │   │   │   └── test
+  │   │   │       └── integration
+  │   │   │           └── README.md
+  │   │   ├── README.dart.md
+  │   │   └── README.js.md
+  │   └── benchpress
+  │       ├── docs
+  │       │   └── index.md
+  │       ├── README.dart.md
+  │       └── README.js.md
+  ├── modules_dart
+  │   ├── angular2_testing
+  │   │   └── README.md
+  │   ├── transform
+  │   │   └── test
+  │   │       └── transform
+  │   │           └── reflection_remover
+  │   │               ├── bootstrap_files
+  │   │               │   └── README.md
+  │   │               ├── debug_files
+  │   │               │   └── README.md
+  │   │               ├── debug_mirrors_files
+  │   │               │   └── README.md
+  │   │               ├── log_mirrors_files
+  │   │               │   └── README.md
+  │   │               └── reflection_remover_files
+  │   │                   └── README.md
+  │   └── README.md
+  ├── tools
+  │   └── tsc-wrapped
+  │       └── README.md
+  ├── CHANGELOG.md
+  ├── COMMITTER.md
+  ├── CONTRIBUTING.md
+  ├── DEVELOPER.md
+  ├── NAMING.md
+  ├── npm-shrinkwrap.readme.md
+  ├── README.md
+  ├── TOOLS_DART.md
+  ├── TOOLS_JS.md
+  ├── TOOLS.md
+  └── TRIAGE_AND_LABELS.md
+
+
++ Lines of code:
+  .github/ISSUE_TEMPLATE.md [31]
+  .github/PULL_REQUEST_TEMPLATE.md [32]
+
+  CHANGELOG.md [2903]
+  COMMITTER.md [34]
+  CONTRIBUTING.md [245]
+  DEVELOPER.md [366]
+  NAMING.md [32]
+  README.md [35]
+  TOOLS.md [4]
+  TOOLS_DART.md [376]
+  TOOLS_JS.md [140]
+  TRIAGE_AND_LABELS.md [168]
+
+  modules/benchpress/README.dart.md [6]
+  modules/benchpress/README.js.md [8]
+  modules/benchpress/docs/index.md [264]
+  modules/@angular/README.dart.md [6]
+  modules/@angular/README.js.md [15]
+  modules/@angular/compiler_cli/README.md [95]
+
+  modules/@angular/docs/bundles/overview.md [92]
+  modules/@angular/docs/change_detection/change_detection.md [10]
+  modules/@angular/docs/change_detection/expressions.md [6]
+  modules/@angular/docs/change_detection/record.md [2]
+  modules/@angular/docs/cheatsheet/bootstrapping.md [18]
+  modules/@angular/docs/cheatsheet/built-in-directives.md [35]
+  modules/@angular/docs/cheatsheet/class-decorators.md [60]
+  modules/@angular/docs/cheatsheet/component-configuration.md [46]
+  modules/@angular/docs/cheatsheet/dependency-injection.md [33]
+  modules/@angular/docs/cheatsheet/directive-and-component-decorators.md [80]
+  modules/@angular/docs/cheatsheet/directive-configuration.md [24]
+  modules/@angular/docs/cheatsheet/forms.md [13]
+  modules/@angular/docs/cheatsheet/routing.md [101]
+  modules/@angular/docs/cheatsheet/template-syntax.md [94]
+  modules/@angular/docs/core/00_index.md [2]
+  modules/@angular/docs/core/01_templates.md [610]
+  modules/@angular/docs/core/02_directives.md [378]
+  modules/@angular/docs/core/03_pipes.md [27]
+  modules/@angular/docs/core/04_decorator_directive.md [0]
+  modules/@angular/docs/core/05_component_directive.md [4]
+  modules/@angular/docs/core/06_viewport_directive.md [0]
+  modules/@angular/docs/core/07_services.md [0]
+  modules/@angular/docs/core/08_lifecycle.md [0]
+  modules/@angular/docs/core/09_compilation.md [20]
+  modules/@angular/docs/core/10_view.md [246]
+  modules/@angular/docs/core/11_shadow_dom.md [0]
+  modules/@angular/docs/core/12_zones.md [108]
+  modules/@angular/docs/di/di.md [267]
+  modules/@angular/docs/di/di_advanced.md [235]
+  modules/@angular/docs/migration/kebab-case.md [239]
+  modules/@angular/docs/web_workers/web_workers.md [560]
+
+  modules/@angular/examples/README.md [6]
+  modules/@angular/router-deprecated/test/integration/README.md [8]
+
+  modules_dart/README.md [34]
+  modules_dart/angular2_testing/README.md [46]
+  modules_dart/transform/test/transform/reflection_remover/bootstrap_files/README.md [5]
+  modules_dart/transform/test/transform/reflection_remover/debug_files/README.md [5]
+  modules_dart/transform/test/transform/reflection_remover/debug_mirrors_files/README.md [6]
+  modules_dart/transform/test/transform/reflection_remover/log_mirrors_files/README.md [6]
+  modules_dart/transform/test/transform/reflection_remover/reflection_remover_files/README.md [6]
+
+  npm-shrinkwrap.readme.md [51]
+
+  tools/tsc-wrapped/README.md [30]
+
+
+
++ Lines of code (sorted):
+  2903 CHANGELOG.md
+
+   610 modules/@angular/docs/core/01_templates.md
+   560 modules/@angular/docs/web_workers/web_workers.md
+
+   378 modules/@angular/docs/core/02_directives.md
+   376 TOOLS_DART.md
+   366 DEVELOPER.md
+   267 modules/@angular/docs/di/di.md
+   264 modules/benchpress/docs/index.md
+   246 modules/@angular/docs/core/10_view.md
+   245 CONTRIBUTING.md
+   239 modules/@angular/docs/migration/kebab-case.md
+   235 modules/@angular/docs/di/di_advanced.md
+   168 TRIAGE_AND_LABELS.md
+   140 TOOLS_JS.md
+   108 modules/@angular/docs/core/12_zones.md
+   101 modules/@angular/docs/cheatsheet/routing.md
+
+    95 modules/@angular/compiler_cli/README.md
+    94 modules/@angular/docs/cheatsheet/template-syntax.md
+    92 modules/@angular/docs/bundles/overview.md
+    80 modules/@angular/docs/cheatsheet/directive-and-component-decorators.md
+    60 modules/@angular/docs/cheatsheet/class-decorators.md
+    51 npm-shrinkwrap.readme.md
+    46 modules_dart/angular2_testing/README.md
+    46 modules/@angular/docs/cheatsheet/component-configuration.md
+    35 README.md
+    35 modules/@angular/docs/cheatsheet/built-in-directives.md
+    34 modules_dart/README.md
+    34 COMMITTER.md
+    33 modules/@angular/docs/cheatsheet/dependency-injection.md
+    32 NAMING.md
+    32 .github/PULL_REQUEST_TEMPLATE.md
+    31 .github/ISSUE_TEMPLATE.md
+    30 tools/tsc-wrapped/README.md
+    27 modules/@angular/docs/core/03_pipes.md
+    24 modules/@angular/docs/cheatsheet/directive-configuration.md
+    20 modules/@angular/docs/core/09_compilation.md
+    18 modules/@angular/docs/cheatsheet/bootstrapping.md
+    15 modules/@angular/README.js.md
+    13 modules/@angular/docs/cheatsheet/forms.md
+    10 modules/@angular/docs/change_detection/change_detection.md
+
+     8 modules/benchpress/README.js.md
+     8 modules/@angular/router-deprecated/test/integration/README.md
+     6 modules_dart/transform/test/transform/reflection_remover/reflection_remover_files/README.md
+     6 modules_dart/transform/test/transform/reflection_remover/log_mirrors_files/README.md
+     6 modules_dart/transform/test/transform/reflection_remover/debug_mirrors_files/README.md
+     6 modules/benchpress/README.dart.md
+     6 modules/@angular/README.dart.md
+     6 modules/@angular/examples/README.md
+     6 modules/@angular/docs/change_detection/expressions.md
+     5 modules_dart/transform/test/transform/reflection_remover/debug_files/README.md
+     5 modules_dart/transform/test/transform/reflection_remover/bootstrap_files/README.md
+     4 TOOLS.md
+     4 modules/@angular/docs/core/05_component_directive.md
+     2 modules/@angular/docs/core/00_index.md
+     2 modules/@angular/docs/change_detection/record.md
+
+     0 modules/@angular/docs/core/11_shadow_dom.md
+     0 modules/@angular/docs/core/08_lifecycle.md
+     0 modules/@angular/docs/core/07_services.md
+     0 modules/@angular/docs/core/06_viewport_directive.md
+     0 modules/@angular/docs/core/04_decorator_directive.md
+

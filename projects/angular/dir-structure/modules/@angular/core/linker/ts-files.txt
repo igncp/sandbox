@@ -1,0 +1,179 @@
++ Tree: 
+  linker
+  ├── component_factory.ts
+  ├── component_resolver.ts
+  ├── debug_context.ts
+  ├── dynamic_component_loader.ts
+  ├── element_injector.ts
+  ├── element_ref.ts
+  ├── element.ts
+  ├── exceptions.ts
+  ├── query_list.ts
+  ├── systemjs_component_resolver.ts
+  ├── template_ref.ts
+  ├── view_container_ref.ts
+  ├── view_ref.ts
+  ├── view.ts
+  ├── view_type.ts
+  └── view_utils.ts
+
+
++ Lines:
+  458 view.ts
+  368 view_utils.ts
+
+  197 view_container_ref.ts
+  144 dynamic_component_loader.ts
+  103 view_ref.ts
+   99 component_factory.ts
+   89 element.ts
+   86 query_list.ts
+
+   72 debug_context.ts
+   67 exceptions.ts
+   54 template_ref.ts
+
+   38 component_resolver.ts
+   34 element_ref.ts
+
+   22 systemjs_component_resolver.ts
+   19 element_injector.ts
+   11 view_type.ts
+
+
++ Export (by file):s
+  component_factory.ts
+    abstract class ComponentRef<C>
+    class ComponentFactory<C>
+    class ComponentRef_<C> extends ComponentRef<C>
+  
+  component_resolver.ts
+    abstract class ComponentResolver
+    class ReflectorComponentResolver extends ComponentResolver
+
+  debug_context.ts
+    class DebugContext implements RenderDebugInfo
+    class StaticNodeDebugInfo
+
+  dynamic_component_loader.ts
+    abstract class DynamicComponentLoader
+    class DynamicComponentLoader_ extends DynamicComponentLoader
+
+  element.ts
+    class AppElement
+
+  element_injector.ts
+    class ElementInjector extends Injector
+
+  element_ref.ts
+    class ElementRef
+
+  exceptions.ts
+    class ExpressionChangedAfterItHasBeenCheckedException extends BaseException
+    class ViewDestroyedException extends BaseException
+    class ViewWrappedException extends WrappedException
+
+  query_list.ts
+    class QueryList<T>
+
+  systemjs_component_resolver.ts
+    class SystemJsComponentResolver implements ComponentResolver
+
+  template_ref.ts
+    abstract class TemplateRef<C>
+    class TemplateRef_<C> extends TemplateRef<C>
+
+  view.ts
+    abstract class AppView<T>
+    class DebugAppView<T> extends AppView<T>
+
+  view_container_ref.ts
+    abstract class ViewContainerRef
+    class ViewContainerRef_ implements ViewContainerRef
+
+  view_ref.ts
+    abstract class EmbeddedViewRef<C> extends ViewRef
+    abstract class ViewRef
+    class ViewRef_<C> implements EmbeddedViewRef<C>, ChangeDetectorRef
+
+  view_type.ts
+    enum ViewType
+
+  view_utils.ts
+    class ViewUtils
+    const EMPTY_ARRAY = /*@ts2dart_const*/[];
+    const EMPTY_MAP = /*@ts2dart_const*/ {};
+    const MAX_INTERPOLATION_VALUES = 9;
+    function arrayLooseIdentical(a: any[], b: any[]): boolean
+    function castByValue<T>(input: any, value: T): T
+    function checkBinding(throwOnChange: boolean, oldValue: any, newValue: any): boolean
+    function ensureSlotCount(projectableNodes: any[][], expectedSlotCount: number): any[][]
+    function flattenNestedViewRenderNodes(nodes: any[]): any[]
+    function interpolate(valueCount: number, c0: string, a1: any, c1: string, a2?: any,
+    function mapLooseIdentical<V>(m1: {[key: string]: V}, m2: {[key: string]: V}): boolean
+    function pureProxy1<P0, R>(fn: (p0: P0) => R): (p0: P0) => R
+    function pureProxy2<P0, P1, R>(fn: (p0: P0, p1: P1) => R): (p0: P0, p1: P1) => R
+    function pureProxy3<P0, P1, P2, R>(fn: (p0: P0, p1: P1, p2: P2) => R): (p0: P0, p1: P1,
+    function pureProxy4<P0, P1, P2, P3, R>(fn: (p0: P0, p1: P1, p2: P2, p3: P3) => R): (
+    function pureProxy5<P0, P1, P2, P3, P4, R>(
+    function pureProxy6<P0, P1, P2, P3, P4, P5, R>(
+    function pureProxy7<P0, P1, P2, P3, P4, P5, P6, R>(
+    function pureProxy8<P0, P1, P2, P3, P4, P5, P6, P7, R>(
+    function pureProxy9<P0, P1, P2, P3, P4, P5, P6, P7, P8, R>(
+    function pureProxy10<P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, R>(
+
+
++ Exports (all):
+  abstract class AppView<T>
+  abstract class ComponentRef<C>
+  abstract class ComponentResolver
+  abstract class DynamicComponentLoader
+  abstract class EmbeddedViewRef<C> extends ViewRef
+  abstract class TemplateRef<C>
+  abstract class ViewContainerRef
+  abstract class ViewRef
+
+  class AppElement
+  class ComponentFactory<C>
+  class ComponentRef_<C> extends ComponentRef<C>
+  class DebugAppView<T> extends AppView<T>
+  class DebugContext implements RenderDebugInfo
+  class DynamicComponentLoader_ extends DynamicComponentLoader
+  class ElementInjector extends Injector
+  class ElementRef
+  class ExpressionChangedAfterItHasBeenCheckedException extends BaseException
+  class QueryList<T>
+  class ReflectorComponentResolver extends ComponentResolver
+  class StaticNodeDebugInfo
+  class SystemJsComponentResolver implements ComponentResolver
+  class TemplateRef_<C> extends TemplateRef<C>
+  class ViewContainerRef_ implements ViewContainerRef
+  class ViewDestroyedException extends BaseException
+  class ViewRef_<C> implements EmbeddedViewRef<C>, ChangeDetectorRef
+  class ViewUtils
+  class ViewWrappedException extends WrappedException
+
+  const EMPTY_ARRAY = /*@ts2dart_const*/[];
+  const EMPTY_MAP = /*@ts2dart_const*/ {};
+  const MAX_INTERPOLATION_VALUES = 9;
+
+  enum ViewType
+
+  function arrayLooseIdentical(a: any[], b: any[]): boolean
+  function castByValue<T>(input: any, value: T): T
+  function checkBinding(throwOnChange: boolean, oldValue: any, newValue: any): boolean
+  function ensureSlotCount(projectableNodes: any[][], expectedSlotCount: number): any[][]
+  function flattenNestedViewRenderNodes(nodes: any[]): any[]
+  function interpolate(valueCount: number, c0: string, a1: any, c1: string, a2?: any,
+  function mapLooseIdentical<V>(m1: {[key: string]: V}, m2: {[key: string]: V}): boolean
+  function pureProxy1<P0, R>(fn: (p0: P0) => R): (p0: P0) => R
+  function pureProxy2<P0, P1, R>(fn: (p0: P0, p1: P1) => R): (p0: P0, p1: P1) => R
+  function pureProxy3<P0, P1, P2, R>(fn: (p0: P0, p1: P1, p2: P2) => R): (p0: P0, p1: P1,
+  function pureProxy4<P0, P1, P2, P3, R>(fn: (p0: P0, p1: P1, p2: P2, p3: P3) => R): (
+  function pureProxy5<P0, P1, P2, P3, P4, R>(
+  function pureProxy6<P0, P1, P2, P3, P4, P5, R>(
+  function pureProxy7<P0, P1, P2, P3, P4, P5, P6, R>(
+  function pureProxy8<P0, P1, P2, P3, P4, P5, P6, P7, R>(
+  function pureProxy9<P0, P1, P2, P3, P4, P5, P6, P7, P8, R>(
+  function pureProxy10<P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, R>(
+

@@ -1,0 +1,28 @@
+ project  : repository
+ repo age : 1 year, 9 months
+ active   : 2577 days
+
+ commits  : 4454
+
+ authors  : 
+   625	vsavkin                 14.0%
+
+   389	Tobias Bosch            8.7%
+   342	Victor Berchet          7.7%
+   309	Igor Minar              6.9%
+
+   224	Tim Blasi               5.0%
+   202	Alex Eagle              4.5%
+   177	Pawel Kozlowski         4.0%
+   176	Misko Hevery            4.0%
+
+   155	Peter Bacon Darwin      3.5%
+   152	Brian Ford              3.4%
+   131	Marc Laval              2.9%
+   112	Jeff Cross              2.5%
+   111	Yegor Jbanov            2.5%
+   109	Rado Kirov              2.4%
+
+    81	Martin Probst           1.8%
+    57	Julie Ralph             1.3%
+

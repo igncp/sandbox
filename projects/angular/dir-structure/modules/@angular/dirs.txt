@@ -1,0 +1,79 @@
++ Tree:
+  modules/@angular/
+  ├── common: Exports features like directives, forms, pipes 
+  ├── compiler
+  ├── compiler_cli
+  ├── core: Contains the most important features like di, zones or change detection
+  ├── docs: Multiple sorted markdown files
+  ├── examples
+  ├── facade: Abstracts features like promises, math, and other language features
+  ├── http 
+  ├── integration_test
+  ├── platform-browser: Exports the bootstrap function
+  ├── platform-browser-dynamic: "platform-browser-dynamic is deprecated, use platform-browser instead"
+  ├── platform-server: (Theory) Provides a way to precompile all the templates (inline and html, css files) before sending to the browser
+  ├── router: "Maps application URLs into application states, to support deep-linking and navigation."
+  ├── router-deprecated
+  └── upgrade
+
+
+
++ Files count:
+  183 core
+  144 compiler
+
+  101 platform-browser
+  91 common
+
+  68 router-deprecated
+  52 examples
+
+  32 router
+  32 http
+  32 docs
+  27 compiler_cli
+  25 facade
+
+  19 platform-server
+  15 upgrade
+
+  7 platform-browser-dynamic
+  5 integration_test
+
+
+
++ Lines count:
+  31274 compiler
+  30126 core
+
+  11377 common
+  9620 router-deprecated
+  8444 platform-browser
+
+  3786 http
+  3398 docs
+  3254 facade
+
+  2613 router
+  2384 upgrade
+
+  1688 compiler_cli
+  1462 platform-server
+  1369 examples
+  953 integration_test
+
+  120 platform-browser-dynamic
+
++ Extensions (including .):
+  646 ts
+   83 dart
+   37 md
+   37 json
+   14 html
+   11 js
+    5 gitkeep
+    2 css
+    1 yaml
+    1 txt
+    1 sh
+

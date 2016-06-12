@@ -1,0 +1,27 @@
++ Tree:
+  modules/@angular/common/src
+  ├── directives: Several general directives like ng-if or ng-of
+  ├── facade -> ../../facade/src
+  ├── forms: Directives about forms, controls, ...
+  ├── location: "Service that applications can use to interact with a browser's URL. Depending on which LocationStrategy is used, `Location` will either persist to the URL's path or the URL's hash segment."
+  └── pipes: Like filters in angular 1
+
+
++ Files number:
+  25 forms
+  12 pipes
+  9 directives
+  5 location
+
+
++ Lines number:
+  2590 forms
+  1025 directives
+  775 pipes
+  505 location
+
+
++ Extensions (including .):
+  54 ts
+   2 dart
+

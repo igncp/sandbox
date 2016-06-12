@@ -1,0 +1,58 @@
++ Tree:
+  modules/@angular/core/src/
+  ├── animation
+  ├── change_detection
+  ├── debug
+  ├── di
+  ├── facade -> ../../facade/src
+  ├── linker
+  ├── metadata
+  ├── profile
+  ├── reflection
+  ├── render
+  ├── testability
+  ├── util
+  └── zone
+
+
++ Files:
+  17 linker
+  14 di
+
+  10 reflection
+  10 change_detection
+  10 animation
+
+  5 profile
+  4 metadata
+  3 zone
+  2 util
+  2 debug
+
+  1 testability
+  1 render
+
+
++ Lines:
+  2494 di
+  2243 metadata
+  1905 linker
+  1731 change_detection
+
+  1050 reflection
+
+  554 zone
+  506 animation
+
+  339 debug
+  334 util
+  255 profile
+
+  156 testability
+  90 render
+
+
++ Extensions (included current):
+  82 ts
+  16 dart
+

@@ -1,0 +1,7 @@
++ Files:
+  README.js.md: Explanation of the different types of generated js (and ts) files
+  README.dart.md
+  pubspec.yaml: The dart dependency manager file
+  license-banner.txt: MIT license
+  package.json: A templated package.json
+

@@ -1,13 +1,13 @@
 #!/bin/bash
 
-appendIfLineDoesNotExist() { LINE=$1 && FILE=$2 && grep -q -F $LINE $FILE || echo $LINE >> $FILE; }
+appendIfLineDoesNotExist() { LINE=$1 && FILE=$2 && grep -q -F "$LINE" $FILE || echo $LINE >> $FILE; }
 
 . ~/.bashrc
 
 if ! type tree ; then
   echo "install basic packages"
   sudo apt-get update
-  sudo apt-get install -y curl git unzip tree
+  sudo apt-get install -y curl git unzip git-extras tree
   git config --global user.email "you@example.com" && git config --global user.name "Your Name"
 fi
 
@@ -54,14 +54,31 @@ if [ ! -d ~/logs ]; then
   mkdir ~/logs
 fi
 
+# .bashrc config start
 appendIfLineDoesNotExist 'export PATH=$PATH:/home/vagrant/.nodenv/versions/5.6.0/bin/' ~/.bashrc && \
-appendIfLineDoesNotExist 'alias rm="rm -rf"' ~/.bashrc
 appendIfLineDoesNotExist 'cd ~/repository' ~/.bashrc
+appendIfLineDoesNotExist 'bind '"'"'"\C-f":vi-fWord'"'"'' ~/.bashrc
+appendIfLineDoesNotExist 'bind '"'"'"\C-b":vi-bWord'"'"'' ~/.bashrc
+# .bashrc config end
+# .bashrc alias start (for bash expansion)
+appendIfLineDoesNotExist 'alias rm="rm -rf"' ~/.bashrc
+appendIfLineDoesNotExist 'alias pdm="/project/dir-structure/modules/"' ~/.bashrc
+appendIfLineDoesNotExist 'alias pdma="/project/dir-structure/modules/@angular/"' ~/.bashrc
+appendIfLineDoesNotExist 'alias pdmp="/project/dir-structure/modules/playground/"' ~/.bashrc
+# .bashrc alias start
 
+# vim start
 touch ~/.vimrc
 appendIfLineDoesNotExist 'set nobackup' ~/.vimrc
 appendIfLineDoesNotExist 'set number' ~/.vimrc
 appendIfLineDoesNotExist 'map ,e :e <C-R>=expand("%:p:h") . "/" <CR>' ~/.vimrc
+appendIfLineDoesNotExist "set tabstop=2" ~/.vimrc
+appendIfLineDoesNotExist "set shiftwidth=2" ~/.vimrc
+appendIfLineDoesNotExist 'set softtabstop=2' ~/.vimrc
+appendIfLineDoesNotExist 'set expandtab' ~/.vimrc
+appendIfLineDoesNotExist 'nnoremap ,cd :cd %:p:h<CR>:pwd<CR>' ~/.vimrc
+appendIfLineDoesNotExist 'nnoremap <Space> @d' ~/.vimrc
+# vim end
 
 if [[ $(ps aux | grep "node_modules\/forever" | grep "http-server" | wc -l) = "0" ]]; then
   $NODE_MODULES_PATH/forever/bin/forever start -a -l ~/logs/forever.log -- $NODE_MODULES_PATH/http-server/bin/http-server ~/repository/dist -p 9000 -c-1

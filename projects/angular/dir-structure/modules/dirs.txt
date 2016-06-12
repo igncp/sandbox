@@ -1,0 +1,37 @@
+modules
+├── @angular: source code
+├── angular1_router
+├── benchmarks
+├── benchmarks_external: this directory name doesn't appear in any file of the repo
+├── benchpress
+├── payload_tests
+├── playground: examples
+└── rollup-test
+
+
+Files number:
+  838 @angular
+
+  186 playground
+
+  69 benchpress
+  46 benchmarks_external
+  42 benchmarks
+
+  14 angular1_router
+  10 rollup-test
+  4 payload_tests
+
+
+Lines number:
+  111946 @angular
+
+  10302 playground
+  5435 benchpress
+  2897 angular1_router
+  2820 benchmarks
+  2088 benchmarks_external
+
+  183 rollup-test
+  51 payload_tests
+

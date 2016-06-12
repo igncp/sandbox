@@ -1,0 +1,59 @@
++ Tree:
+  tools/
+  ├── analytics
+  ├── broccoli
+  │   ├── html-replace
+  │   ├── js-replace
+  │   └── trees
+  ├── build
+  │   ├── snippets
+  │   ├── systemjs
+  │   └── webpack
+  ├── cjs-jasmine
+  ├── code.angularjs.org
+  ├── karma
+  ├── npm
+  ├── public_api_guard
+  ├── travis
+  ├── tsc-watch
+  ├── tsc-wrapped
+  │   ├── src
+  │   └── test
+  └── tslint
+
+
++ Files:
+  30 broccoli
+  27 build
+  
+  16 tsc-wrapped
+
+  5 npm
+  4 tslint
+  4 cjs-jasmine
+  3 code.angularjs.org
+  3 analytics
+  2 tsc-watch
+
+  1 travis
+  1 public_api_guard
+  1 karma
+
+
++ Lines:
+  6437 build
+
+  3341 broccoli
+  2087 tsc-wrapped
+  1353 public_api_guard
+
+  380 analytics
+  280 tsc-watch
+  195 tslint
+  176 code.angularjs.org
+  149 cjs-jasmine
+  146 npm
+
+  59 karma
+  12 travis
+

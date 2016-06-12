@@ -1,0 +1,112 @@
++ TS Exports (all sorted, excluding those with ' from '):
+  abstract class AbstractControl
+  abstract class AbstractControlDirective
+  abstract class LocationStrategy
+  abstract class NgControl extends AbstractControlDirective
+  abstract class NgLocalization { abstract getPluralCategory(value: any): string; }
+  abstract class PlatformLocation
+
+  class AsyncPipe implements OnDestroy
+  class CheckboxControlValueAccessor implements ControlValueAccessor
+  class ControlArray extends AbstractControl
+  class ControlContainer extends AbstractControlDirective
+  class ControlGroup extends AbstractControl
+  class Control extends AbstractControl
+  class CurrencyPipe extends NumberPipe implements PipeTransform
+  class DatePipe implements PipeTransform
+  class DecimalPipe extends NumberPipe implements PipeTransform
+  class DefaultValueAccessor implements ControlValueAccessor
+  class FormBuilder
+  class HashLocationStrategy extends LocationStrategy
+  class I18nPluralPipe implements PipeTransform
+  class I18nSelectPipe implements PipeTransform
+  class InvalidPipeArgumentException extends BaseException
+  class JsonPipe implements PipeTransform
+  class Location
+  class LowerCasePipe implements PipeTransform
+  class MaxLengthValidator implements Validator
+  class MinLengthValidator implements Validator
+  class NgClass implements DoCheck, OnDestroy
+  class NgControlGroup extends ControlContainer implements OnInit,
+  class NgControlName extends NgControl implements OnChanges,
+  class NgControlStatus
+  class NgForRow
+  class NgFormControl extends NgControl implements OnChanges
+  class NgFormModel extends ControlContainer implements Form,
+  class NgForm extends ControlContainer implements Form
+  class NgFor implements DoCheck
+  class NgIf
+  class NgModel extends NgControl implements OnChanges
+  class NgPluralCase
+  class NgPlural implements AfterContentInit
+  class NgSelectOption implements OnDestroy
+  class NgStyle implements DoCheck
+  class NgSwitch
+  class NgSwitchDefault
+  class NgSwitchWhen
+  class NgTemplateOutlet
+  class NumberPipe
+  class NumberValueAccessor implements ControlValueAccessor
+  class PathLocationStrategy extends LocationStrategy
+  class PatternValidator implements Validator
+  class PercentPipe extends NumberPipe implements PipeTransform
+  class RadioButtonState
+  class RadioControlRegistry
+  class RadioControlValueAccessor implements ControlValueAccessor,
+  class ReplacePipe implements PipeTransform
+  class RequiredValidator
+  class SelectControlValueAccessor implements ControlValueAccessor
+  class SlicePipe implements PipeTransform
+  class SwitchView
+  class UpperCasePipe implements PipeTransform
+  class Validators
+
+  const APP_BASE_HREF: OpaqueToken = /*@ts2dart_const*/ new OpaqueToken('appBaseHref');
+  const CHECKBOX_VALUE_ACCESSOR: any = /*@ts2dart_const*/
+  const COMMON_DIRECTIVES: Type[][] = /*@ts2dart_const*/[CORE_DIRECTIVES, FORM_DIRECTIVES];
+  const COMMON_PIPES = /*@ts2dart_const*/[
+  const CORE_DIRECTIVES: Type[] = /*@ts2dart_const*/[
+  const DEFAULT_VALUE_ACCESSOR: any = /*@ts2dart_const*/
+  const FORM_BINDINGS = /*@ts2dart_const*/ FORM_PROVIDERS;
+  const FORM_DIRECTIVES: Type[] = /*@ts2dart_const*/[
+  const FORM_PROVIDERS: Type[] = /*@ts2dart_const*/[FormBuilder, RadioControlRegistry];
+  const INVALID = "INVALID";
+  const MAX_LENGTH_VALIDATOR: any = /*@ts2dart_const*/ /*@ts2dart_Provider*/
+  const MIN_LENGTH_VALIDATOR: any = /*@ts2dart_const*/ /*@ts2dart_Provider*/
+  const NG_ASYNC_VALIDATORS: OpaqueToken
+  const NG_VALIDATORS: OpaqueToken = /*@ts2dart_const*/ new OpaqueToken("NgValidators");
+  const NG_VALUE_ACCESSOR: OpaqueToken
+  const NUMBER_VALUE_ACCESSOR: any = /*@ts2dart_const*/ /*@ts2dart_Provider*/
+  const PATTERN_VALIDATOR: any = /*@ts2dart_const*/ /*@ts2dart_Provider*/
+  const PENDING = "PENDING";
+  const RADIO_VALUE_ACCESSOR: any = /*@ts2dart_const*/ /*@ts2dart_Provider*/
+  const REQUIRED_VALIDATOR: any = /*@ts2dart_const*/ /*@ts2dart_Provider*/
+  const SELECT_VALUE_ACCESSOR: any = /*@ts2dart_const*/ /*@ts2dart_Provider*/
+  const VALID = "VALID";
+  const controlGroupProvider: any
+  const controlNameBinding: any
+  const formControlBinding: any
+  const formControlBinding: any
+  const formDirectiveProvider: any
+  const formDirectiveProvider: any
+
+  function composeAsyncValidators(
+  function composeValidators(validators: /* Array<Validator|Function> */ any[]): ValidatorFn
+  function controlPath(name: string, parent: ControlContainer): string[]
+  function isControl(control: Object): boolean
+  function isPropertyUpdated(changes: {[key: string]: any}, viewModel: any): boolean
+  function normalizeAsyncValidator(validator: AsyncValidatorFn | Validator): AsyncValidatorFn
+  function normalizeValidator(validator: ValidatorFn | Validator): ValidatorFn
+  function selectValueAccessor(dir: NgControl,
+  function setUpControlGroup(control: ControlGroup, dir: NgControlGroup)
+  function setUpControl(control: Control, dir: NgControl): void
+
+  interface AsyncValidatorFn
+  interface ControlValueAccessor
+  interface Form
+  interface UrlChangeEvent { type: string; }
+  interface UrlChangeListener { (e: UrlChangeEvent): any; }
+  interface ValidatorFn { (c: AbstractControl): {[key: string]: any}; }
+  interface Validator { validate(c: AbstractControl): {[key: string]: any}; }
+
+(command: find modules/@angular/common/src -type f -name "*.ts" | xargs grep -h export | sed -r "s| \{$||" | grep -Ev " from " | grep -Ev " \* " | grep -v exportAs | sort -V | sed -r "s/^export //" | sed -r "s| =$||" )

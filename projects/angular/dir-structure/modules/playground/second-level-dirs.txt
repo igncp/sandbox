@@ -1,0 +1,45 @@
+modules/playground/
+├── e2e_test
+│   ├── alt_routing
+│   ├── async
+│   ├── hash_routing
+│   ├── hello_world
+│   ├── http
+│   ├── jsonp
+│   ├── key_events
+│   ├── model_driven_forms
+│   ├── order_management
+│   ├── person_management
+│   ├── relative_assets
+│   ├── routing
+│   ├── sourcemap
+│   ├── svg
+│   ├── template_driven_forms
+│   ├── web_workers
+│   └── zippy_component
+├── src
+│   ├── alt_routing
+│   ├── animate
+│   ├── async
+│   ├── benchpress
+│   ├── gestures
+│   ├── hash_routing
+│   ├── hello_world
+│   ├── http
+│   ├── jsonp
+│   ├── key_events: How to bind regular and composed key events to functions
+│   ├── model_driven_forms
+│   ├── order_management
+│   ├── person_management
+│   ├── relative_assets: Import an app from another directory, which uses its own assets without knowing about the root component
+│   ├── routing
+│   ├── sourcemap: Shows how to throw exceptions, and how the maps to the files are displayed
+│   ├── svg
+│   ├── template_driven_forms
+│   ├── todo
+│   ├── upgrade
+│   ├── web_workers
+│   └── zippy_component
+└── test
+    └── benchpress
+
