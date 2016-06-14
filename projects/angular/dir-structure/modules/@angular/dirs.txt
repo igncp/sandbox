@@ -9,7 +9,7 @@
   ├── facade: Abstracts features like promises, math, and other language features
   ├── http 
   ├── integration_test
-  ├── platform-browser: Exports the bootstrap function
+  ├── platform-browser: Exports the bootstrap function. Has sections like web_workers, xhr, etc.
   ├── platform-browser-dynamic: "platform-browser-dynamic is deprecated, use platform-browser instead"
   ├── platform-server: (Theory) Provides a way to precompile all the templates (inline and html, css files) before sending to the browser
   ├── router: "Maps application URLs into application states, to support deep-linking and navigation."

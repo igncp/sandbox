@@ -1,0 +1,30 @@
++ Tree
+  modules/@angular/platform-browser/src/
+  ├── browser
+  ├── dom
+  ├── facade -> ../../facade/src
+  ├── security
+  ├── web_workers
+  └── xhr
+
+
++ Files
+  19 web_workers
+  15 dom
+  10 browser
+  4 security
+  2 xhr
+
+
++ Lines
+  1708 web_workers
+  1169 dom
+  755 browser
+  564 security
+  70 xhr
+
+
++ Extensions (including root)
+  51 ts
+   2 dart
+

@@ -1,0 +1,874 @@
+  - OfflineCompiler
+        should compile components
+  - HtmlParser
+    - parse
+      - text nodes
+        should parse root level text nodes
+        should parse text nodes inside regular elements
+        should parse text nodes inside template elements
+        should parse CDATA
+      - elements
+        should parse root level elements
+        should parse elements inside of regular elements
+        should parse elements inside of template elements
+        should support void elements
+        should not error on void elements from HTML5 spec
+        should close void elements on text nodes
+        should support optional end tags
+        should support nested elements
+        should add the requiredParent
+        should not add the requiredParent when the parent is a template
+        should support explicit mamespace
+        should support implicit mamespace
+        should propagate the namespace
+        should match closing tags case sensitive
+        should support self closing void elements
+        should support self closing foreign elements
+        should ignore LF immediately after textarea, pre and listing
+      - attributes
+        should parse attributes on regular elements case sensitive
+        should parse attributes without values
+        should parse attributes on svg elements case sensitive
+        should parse attributes on template elements
+        should support namespace
+      - comments
+        should preserve comments
+      - source spans
+        should store the location
+        should set the start and end source spans
+      - errors
+        should report unexpected closing tags
+        should report closing tag for void elements
+        should report self closing html element
+        should report self closing custom element
+        should also report lexer errors
+      should parse numbers
+      should parse strings
+      should parse null
+      should parse unary - expressions
+      should parse unary ! expressions
+      should parse multiplicative expressions
+      should parse additive expressions
+      should parse relational expressions
+      should parse equality expressions
+      should parse strict equality expressions
+      should parse expressions
+      should parse grouped expressions
+      should ignore comments in expressions
+      should retain // in string literals
+      should parse an empty string
+        should parse array
+        should parse map
+        should only allow identifier, string, or keyword as map key
+        should only allow identifier or keyword as member names
+        should parse safe field access
+        should parse ternary/conditional expressions
+        should throw on incorrect ternary operator syntax
+      should store the source in the result
+      should store the passed-in location
+      should throw a reasonable error for unconsumed tokens
+      should throw on missing expected token
+        should only allow identifier or keyword as formatter names
+        should parse quoted expressions
+        should not crash when prefix part is not tokenizable
+        should ignore whitespace around quote prefix
+        should refuse prefixes that are not single identifiers
+      should store the source in the result
+      should store the passed-in location
+      should throw on chain expressions
+      should throw on assignment
+      should throw when encountering interpolation
+      should parse conditional expression
+      should ignore comments in bindings
+      should retain // in string literals
+      should retain // in : microsyntax
+    - parseTemplateBindings
+      should parse an empty string
+      should parse a string without a value
+      should only allow identifier, string, or keyword including dashes as keys
+      should detect expressions as value
+      should detect names as value
+      should allow space and colon as separators
+      should allow multiple pairs
+      should store the sources in the result
+      should store the passed-in location
+      should support var notation with a deprecation warning
+      should support # notation with a deprecation warning
+      should support let notation
+      should parse pipes
+    - parseInterpolation
+      should return null if no interpolation
+      should parse no prefix/suffix interpolation
+      should parse prefix/suffix with multiple interpolation
+      should parse conditional expression
+      should parse expression with newline characters
+        should ignore comments in interpolation expressions
+        should retain // in single quote strings
+        should retain // in double quote strings
+        should ignore comments after string literals
+        should retain // in complex strings
+        should retain // in nested, unterminated strings
+      should throw when encountering interpolation
+    - wrapLiteralPrimitive
+      should wrap a literal primitive
+  - lexer
+    - token
+      should tokenize a simple identifier
+      should tokenize a dotted identifier
+      should tokenize an operator
+      should tokenize an indexed operator
+      should tokenize numbers
+      should tokenize numbers within index ops
+      should tokenize simple quoted strings
+      should tokenize quoted strings with escaped quotes
+      should tokenize a string
+      should tokenize undefined
+      should ignore whitespace
+      should tokenize quoted string
+      should tokenize escaped quoted string
+      should tokenize unicode
+      should tokenize relation
+      should tokenize statements
+      should tokenize function invocation
+      should tokenize simple method invocations
+      should tokenize method invocation
+      should tokenize number
+      //    should tokenize negative number
+      should tokenize number with exponent
+      should throws exception for invalid exponent
+      should tokenize number starting with a dot
+      should throw error on invalid unicode
+      should tokenize hash as operator
+      should tokenize ?. as operator
+  - UrlResolver
+    - absolute base url
+      should add a relative path to the base url
+      should replace the base path
+      should append to the base path
+      should support ".." in the path
+      should ignore the base path when the url has a scheme
+      should support absolute urls
+    - relative base url
+      should add a relative path to the base url
+      should support ".." in the path
+      should support absolute urls
+      should not resolve urls against the baseUrl when the url contains a scheme
+    - packages
+      should resolve a url based on the application package
+      should contain a default value of "/packages" when nothing is provided for DART
+      should contain a default value of "/" when nothing is provided for TS/ESM
+      should resolve a package value when present within the baseurl
+    - asset urls
+      should resolve package: urls into asset: urls
+    - corner and error cases
+      should encode URLs before resolving
+  - extractStyleUrls
+    should not resolve "url()" urls
+    should extract "@import" urls
+    should extract "@import url()" urls
+    should extract "@import urls and keep rules in the same line
+    should extract media query in "@import"
+    should leave absolute non-package @import urls intact
+    should resolve package @import urls
+  - isStyleUrlResolvable
+    should resolve relative urls
+    should resolve package: urls
+    should resolve asset: urls
+    should not resolve empty urls
+    should not resolve urls with other schema
+    should not resolve urls with absolute paths
+  - MockXHR
+    should return a response from the definitions
+    should return an error from the definitions
+    should return a response from the expectations
+    should return an error from the expectations
+    should not reuse expectations
+    should return expectations before definitions
+    should throw when there is no definitions or expectations
+    should throw when flush is called without any pending requests
+    should throw on unsatisfied expectations
+  - MockViewResolver
+    - View overriding
+      should fallback to the default ViewResolver when templates are not overridden
+      should allow overriding the @View
+      should not allow overriding a view after it has been resolved
+    - inline template definition overriding
+      should allow overriding the default template
+      should allow overriding an overridden @View
+      should not allow overriding a view after it has been resolved
+    - Directive overriding
+      should allow overriding a directive from the default view
+      should allow overriding a directive from an overridden @View
+      should throw when the overridden directive is not present
+      should not allow overriding a directive after its view has been resolved
+  - CompileMetadataResolver
+    - getMetadata
+      should read metadata
+      should use the moduleUrl from the reflector if none is given
+      should throw when metadata is incorrectly typed
+    - getViewDirectivesMetadata
+      should return the directive metadatas
+        should include platform directives when available
+  - DOMElementSchema
+    should detect properties on regular elements
+    should detect different kinds of types
+    should return true for custom-like elements
+    should re-map property names that are specified in DOM facade
+    should not re-map property names that are not specified in DOM facade
+    should return security contexts for elements
+    should detect properties on namespaced elements
+      generate a new schema
+  - CSS parsing and visiting
+    should parse and visit a stylesheet
+    should parse and visit each of the stylesheet selectors
+    should parse and visit each of the stylesheet style key/value definitions
+    should parse and visit the associated media query values
+    should parse and visit the associated "@inline" rule values
+    should parse and visit the keyframe blocks
+    should parse and visit the associated keyframe rules
+  - CssParser
+    should parse CSS into a stylesheet AST
+    should parse mutliple CSS selectors sharing the same set of styles
+    should parse keyframe rules
+    should parse media queries into a stylesheet AST
+    should parse inline CSS values
+    should parse CSS values that contain functions and leave the inner function data untokenized
+    should parse un-named block-level CSS values
+    should parse multiple levels of semicolons
+    should throw an error if an unknown @value block rule is parsed
+    should parse empty rules
+    should parse the @document rule
+    should parse the @page rule
+    should parse the @supports rule
+    should collect multiple errors during parsing
+    should recover from selector errors and continue parsing
+    should throw an error when parsing invalid CSS Selectors
+    should throw an error if an attribute selector is not closed properly
+    should throw an error if a pseudo function selector is not closed properly
+    should raise an error when a semi colon is missing from a CSS style/pair that isn\
+    should parse the inner value of a :not() pseudo-selector as a CSS selector
+    should raise parse errors when CSS key/value pairs are invalid
+    should recover from CSS key/value parse errors
+    should parse minified CSS content properly
+    should parse a snippet of keyframe code from animate.css properly
+  - CssLexer
+    should lex newline characters as whitespace when whitespace mode is on
+    should combined newline characters as one newline token when whitespace mode is on
+    should not consider whitespace or newline values at all when whitespace mode is off
+    should lex simple selectors and their inner properties
+    should capture the column and line values for each token
+    should lex quoted strings and escape accordingly
+    should treat attribute operators as regular characters
+    should lex numbers properly and set them as numbers
+    should lex @keywords
+    should still lex a number even if it has a dimension suffix
+    should allow escaped character and unicode character-strings in CSS selectors
+    should distinguish identifiers and numbers from special characters
+    should filter out comments and whitespace by default
+    should track comments when the flag is set to true
+    - Selector Mode
+      should throw an error if a selector is being parsed while in the wrong mode
+    - Attribute Mode
+      should consider attribute selectors as valid input and throw when an invalid modifier is used
+    - Media Query Mode
+      should validate media queries with a reduced subset of valid characters
+    - Pseudo Selector Mode
+      should validate pseudo selector identifiers with a reduced subset of valid characters
+    - Pseudo Selector Mode
+      should validate pseudo selector identifiers with a reduced subset of valid characters
+    - Style Block Mode
+      should style blocks with a reduced subset of valid characters
+  - test component builder
+    should instantiate a component with valid DOM
+    should allow changing members of the component
+    should override a template
+    should override a view
+    should override component dependencies
+    should override items from a list
+    should override a provider
+    should override a viewBinding
+      - ComponentFixture
+        should auto detect changes if autoDetectChanges is called
+        should auto detect changes if ComponentFixtureAutoDetect is provided as true
+        should signal through whenStable when the fixture is stable (autoDetectChanges)
+        should signal through isStable when the fixture is stable (no autoDetectChanges)
+        should wait for macroTask(setTimeout) while checking for whenStable 
+        should wait for macroTask(setTimeout) while checking for whenStable 
+        should wait for nested macroTasks(setTimeout) while checking for whenStable 
+        should wait for nested macroTasks(setTimeout) while checking for whenStable 
+        should stabilize after async task in change detection (autoDetectChanges)
+        should stabilize after async task in change detection(no autoDetectChanges)
+        - No NgZone
+          calling autoDetectChanges raises an error
+          should instantiate a component with valid DOM
+          should allow changing members of the component
+        - createSync
+          should create components
+  - DirectiveNormalizer
+    - loadTemplate
+      - inline template
+        should store the template
+        should resolve styles on the annotation against the moduleUrl
+        should resolve styles in the template against the moduleUrl
+      - templateUrl
+        should load a template from a url that is resolved against moduleUrl
+        should resolve styles on the annotation against the moduleUrl
+        should resolve styles in the template against the templateUrl
+      should throw if no template was specified
+    - normalizeLoadedTemplate
+      should store the viewEncapsulationin the result
+      should keep the template as html
+      should collect ngContent
+      should normalize ngContent wildcard selector
+      should collect top level styles in the template
+      should collect styles inside in elements
+      should collect styleUrls in the template
+      should collect styleUrls in elements
+      should ignore link elements with non stylesheet rel attribute
+      should ignore link elements with absolute urls but non package: scheme
+      should extract @import style urls into styleAbsUrl
+      should not resolve relative urls in inline styles
+      should resolve relative style urls in styleUrls
+      should resolve relative style urls in styleUrls with http directive url
+      should normalize ViewEncapsulation.Emulated to ViewEncapsulation.None if there are no styles nor stylesheets
+      should ignore ng-content in elements with ngNonBindable
+      should still collect <style> in elements with ngNonBindable
+  - SelectorMatcher
+    should select by element name case sensitive
+    should select by class name case insensitive
+    should select by attr name case sensitive independent of the value
+    should select by attr name only once if the value is from the DOM
+    should select by attr name case sensitive and value case insensitive
+    should select by element name, class name and attribute name with value
+    should select by many attributes and independent of the value
+    should select independent of the order in the css selector
+    should not select with a matching :not selector
+    should select with a non matching :not selector
+    should match with multiple :not selectors
+    should select with one match in a list
+    should not select twice with two matches in a list
+  - CssSelector.parse
+    should detect element names
+    should detect class names
+    should detect attr names
+    should detect attr values
+    should detect multiple parts
+    should detect multiple attributes
+    should detect :not
+    should detect :not without truthy
+    should throw when nested :not
+    should throw when multiple selectors in :not
+    should detect lists of selectors
+    should detect lists of selectors with :not
+  - CssSelector.getMatchingElementTemplate
+    should create an element with a tagName, classes, and attributes with the correct casing
+    should create an element without a tag name
+    should ignore :not selectors
+  - I18nHtmlParser
+    should handle interpolation with custom placeholder names
+    should handle interpolation with duplicate placeholder names
+    should extract from partitions
+      - implicit translation
+    - Xmb Serialization
+  - Message
+  - MessageExtractor
+    should extract from elements with the i18n attr
+    should extract from elements with the i18n attr without a desc
+    should extract from elements with the i18n attr without a meaning
+    should extract from attributes
+    should extract from partitions
+    should ignore other comments
+    should replace interpolation with placeholders (text nodes)
+    should replace interpolation with placeholders (attributes)
+    should replace interpolation with named placeholders if provided (text nodes)
+    should replace interpolation with named placeholders if provided (attributes)
+    should match named placeholders with extra spacing
+    should suffix duplicate placeholder names with numbers
+    - implicit translation
+      should extract from elements
+      should extract meaning and description from elements when present
+      should extract from attributes
+      should extract meaning and description from attributes when present
+      should error on i18n attributes without matching "real" attributes
+      should error when cannot find a matching desc
+    should read out the View metadata from the Component metadata
+    should throw when Component has no View decorator and no template is set
+    should throw when simple class has no View decorator and no template is set
+    should read out the Directive metadata
+    should throw if not matching metadata is found
+    should not read parent class Directive metadata
+    - inputs
+      should append directive inputs
+      should work with getters and setters
+    - outputs
+      should append directive outputs
+      should work with getters and setters
+      should throw if duplicate outputs
+    - host
+      should append host bindings
+      should append host listeners
+    - queries
+      should append ContentChildren
+      should append ViewChildren
+      should append ContentChild
+      should append ViewChild
+  - TemplateParser template transform
+    - single
+      should transform TemplateAST
+    - multiple
+      should compose transformers
+  - TemplateParser
+    - parse
+      - nodes without bindings
+        should parse text nodes
+        should parse elements with attributes
+      should parse ngContent
+      should parse ngContent regardless the namespace
+      should parse bound text nodes
+      - bound properties
+        should parse mixed case bound properties
+        should parse dash case bound properties
+        should normalize property names via the element schema
+        should parse mixed case bound attributes
+        should parse and dash case bound classes
+        should parse mixed case bound classes
+        should parse mixed case bound styles
+        should report invalid prefixes
+        should parse bound properties via [...] and not report them as attributes
+        should parse bound properties via bind- and not report them as attributes
+        should parse bound properties via {{...}} and not report them as attributes
+        should parse bound properties via animate- and not report them as attributes
+      - events
+        should parse bound events with a target
+        should parse bound events via (...) and not report them as attributes
+        should parse event names case sensitive
+        should parse bound events via on- and not report them as attributes
+        should allow events on explicit embedded templates that are emitted by a directive
+      - bindon
+        should parse bound events and properties via [(...)] and not report them as attributes
+        should parse bound events and properties via bindon- and not report them as attributes
+      - directives
+        should order directives by the directives array in the View and match them only once
+        should locate directives in property bindings
+        should locate directives in event bindings
+        should parse directive host properties
+        should parse directive host listeners
+        should parse directive properties
+        should parse renamed directive properties
+        should parse literal directive properties
+        should favor explicit bound properties over literal properties
+        should support optional directive properties
+      - providers
+        should provide a component
+        should provide a directive
+        should use the public providers of a directive
+        should use the private providers of a component
+        should support multi providers
+        should overwrite non multi providers
+        should overwrite component providers by directive providers
+        should overwrite view providers by directive providers
+        should overwrite directives by providers
+        should throw if mixing multi and non multi providers
+        should sort providers by their DI order
+        should sort directives by their DI order
+        should mark directives and dependencies of directives as eager
+        should mark dependencies on parent elements as eager
+        should mark queried providers as eager
+        should not mark dependencies accross embedded views as eager
+        should report missing @Self() deps as errors
+        should change missing @Self() that are optional to nulls
+        should report missing @Host() deps as errors
+        should change missing @Host() that are optional to nulls
+      - references
+        should parse references via #... and not report them as attributes
+        should parse references via ref-... and not report them as attributes
+        should parse references via var-... and report them as deprecated
+        should parse camel case references
+        should assign references with empty value to the element
+        should assign references to directives via exportAs
+        should report references with values that dont match a directive as errors
+        should report invalid reference names
+        should report variables as errors
+        should assign references with empty value to components
+        should not locate directives in references
+      - explicit templates
+        should create embedded templates for <template> elements
+        should create embedded templates for <template> elements regardless the namespace
+        should support references via #...
+        should support references via ref-...
+        should parse variables via let-...
+        should parse variables via var-... and report them as deprecated
+        should not locate directives in variables
+      - inline templates
+        should wrap the element into an EmbeddedTemplateAST
+        should parse bound properties
+        should parse variables via #... and report them as deprecated
+        should parse variables via var ... and report them as deprecated
+        should parse variables via let ...
+        - directives
+          should locate directives in property bindings
+          should not locate directives in variables
+          should not locate directives in references
+        should work with *... and use the attribute name as property binding name
+        should work with *... and empty value
+        should work with *... and :
+    - content projection
+      - project text nodes
+        should project text nodes with wildcard selector
+      - project elements
+        should project elements with wildcard selector
+        should project elements with css selector
+      - embedded templates
+        should project embedded templates with wildcard selector
+        should project embedded templates with css selector
+      - ng-content
+        should project ng-content with wildcard selector
+        should project ng-content with css selector
+      should project into the first matching ng-content
+      should project into wildcard ng-content last
+      should only project direct child nodes
+      should project nodes of nested components
+      should project children of components with ngNonBindable
+      should match the element when there is an inline template
+      - ngProjectAs
+        should override elements
+        should override <ng-content>
+        should override <template>
+        should override inline templates
+      should support other directives before the component
+    - splitClasses
+      should keep an empty class
+      should split 2 classes
+      should trim classes
+    - error cases
+      should report when ng-content has content
+      should report invalid property names
+      should report errors in expressions
+      should not throw on invalid property names if the property is used by a directive
+      should not allow more than 1 component per element
+      should not allow components or element bindings nor dom events on explicit embedded templates
+      should not allow components or element bindings on inline embedded templates
+    - ignore elements
+      should ignore <script> elements
+      should ignore <style> elements
+      - <link rel="stylesheet">
+        should keep <link rel="stylesheet"> elements if they have an absolute non package: url
+        should keep <link rel="stylesheet"> elements if they have no uri
+        should ignore <link rel="stylesheet"> elements if they have a relative uri
+        should ignore <link rel="stylesheet"> elements if they have a package: uri
+      should ignore bindings on children of elements with ngNonBindable
+      should keep nested children of elements with ngNonBindable
+      should ignore <script> elements inside of elements with ngNonBindable
+      should ignore <style> elements inside of elements with ngNonBindable
+      should ignore <link rel="stylesheet"> elements inside of elements with ngNonBindable
+      should convert <ng-content> elements into regular elements inside of elements with ngNonBindable
+    - source spans
+      should support ng-content
+      should support embedded template
+      should support element and attributes
+      should support references
+      should support variables
+      should support events
+      should support element property
+      should support bound text
+      should support text nodes
+      should support directive
+      should support directive in namespace
+      should support directive property
+    - pipes
+      should allow pipes that have been defined as dependencies
+      should report pipes as error that have not been defined as dependencies
+  - ShadowCss
+    should handle empty string
+    should add an attribute to every rule
+    should handle invalid css
+    should add an attribute to every selector
+    should support newlines in the selector and content 
+    should handle media rules
+    should handle media rules with simple rules
+    should handle support rules
+    should handle keyframes rules
+    should handle -webkit-keyframes rules
+    should handle complicated selectors
+    should handle :host
+    should handle :host-context
+    should support polyfill-next-selector
+    should support polyfill-unscoped-rule
+    should support multiple instances polyfill-unscoped-rule
+    should support polyfill-rule
+    should handle ::shadow
+    should handle /deep/
+    should handle >>>
+    should pass through @import directives
+    should shim rules after @import
+    should leave calc() unchanged
+    should strip comments
+    should ignore special characters in comments
+    should support multiline comments
+  - processRules
+    - parse rules
+      should work with empty css
+      should capture a rule without body
+      should capture css rules with body
+      should capture css rules with nested rules
+      should capture multiple rules where some have no body
+    - modify rules
+      should allow to change the selector while preserving whitespaces
+      should allow to change the content
+  - output emitter
+        should support literals
+        should support reading vars/keys/props
+        should support writing to vars / keys / props
+        should support declaring functions with parameters and return
+        should support invoking functions and methods
+        should support conditionals
+        should support not
+        should support reading external identifiers
+        should support instantiating classes
+        - operators
+          should support ==
+          should support !=
+          should support ===
+          should support !==
+          should support -
+          should support +
+          should support /
+          should support *
+          should support %
+          should support &&
+          should support ||
+          should support <
+          should support <=
+          should support >
+          should support >=
+        should support throwing errors
+        should support catching errors
+  - TypeScriptEmitter
+    should declare variables
+    should read and write variables
+    should read and write keys
+    should read and write properties
+    should invoke functions and methods and constructors
+    should support builtin methods
+    should support literals
+    should support external identifiers
+    should support operators
+    should support function expressions
+    should support function statements
+    should support comments
+    should support if stmt
+    should support try/catch
+    should support support throwing
+    - classes
+      should support declaring classes
+      should support declaring constructors
+      should support declaring fields
+      should support declaring getters
+      should support methods
+    should support builtin types
+    should support external types
+    should support combined types
+  - DartEmitter
+    should declare variables
+    should read and write variables
+    should read and write keys
+    should read and write properties
+    should invoke functions and methods and constructors
+    should support builtin methods
+    should support literals
+    should support external identifiers
+    should support operators
+    should support function expressions
+    should support function statements
+    should support comments
+    should support if stmt
+    should support try/catch
+    should support support throwing
+    - classes
+      should support declaring classes
+      should support declaring constructors
+      should support declaring fields
+      should support declaring getters
+      should support methods
+    should support builtin types
+    should support external types
+    should support combined types
+  - DartImportGenerator
+    - getImportPath
+      should calculate relative paths Dart
+      should calculate relative paths for different constellations
+      should calculate absolute paths
+      should not allow absolute imports of non lib modules
+      should not allow non asset urls as base url
+      should allow non asset urls as import urls and pass them through
+  - AbstractEmitter
+    - escapeSingleQuoteString
+      should escape single quotes
+      should escape backslash
+      should escape newlines
+      should escape carriage returns
+      should escape $
+      should not escape $
+  - JavaScriptEmitter
+    should declare variables
+    should read and write variables
+    should read and write keys
+    should read and write properties
+    should invoke functions and methods and constructors
+    should support builtin methods
+    should support literals
+    should support external identifiers
+    should support operators
+    should support function expressions
+    should support function statements
+    should support comments
+    should support if stmt
+    should support try/catch
+    should support support throwing
+    - classes
+      should support declaring classes
+      should support declaring constructors
+      should support declaring getters
+      should support methods
+  - parseAnimationEntry
+    should merge repeated style steps into a single style ast step entry
+    should animate only the styles requested within an animation step
+    should populate the starting and duration times propertly
+    should apply the correct animate() styles when parallel animations are active and use the same properties
+    should throw errors when animations animate a CSS property at the same time
+    should return an error when an animation style contains an invalid timing value
+    should collect and return any errors collected when parsing the metadata
+    should normalize a series of keyframe styles into a list of offset steps
+    should use an existing collection of offset steps if provided
+    should sort the provided collection of steps that contain offsets
+    should throw an error if a partial amount of keyframes contain an offset
+    should use an existing style used earlier in the animation sequence if not defined in the first keyframe
+    should copy over any missing styles to the final keyframe if not already defined
+    should create an initial keyframe if not detected and place all keyframes styles there
+    should create an destination keyframe if not detected and place all keyframes styles there
+    - easing / duration / delay
+      should parse simple string-based values
+      should parse a numeric duration value
+      should parse an easing value without a delay
+      should parse a complex easing value
+  - RuntimeAnimationCompiler
+    should throw an exception containing all the inner animation parser errors
+  - preparseElement
+    should detect script elements
+    should detect style elements
+    should detect stylesheet elements
+    should detect ng-content elements
+    should normalize ng-content.select attribute
+    should extract ngProjectAs value
+   - CompileMetadata
+    - CompileIdentifierMetadata
+      should serialize with full data
+      should serialize with no data
+    - DirectiveMetadata
+      should serialize with full data
+      should serialize with no data
+    - TypeMetadata
+      should serialize with full data
+      should serialize with no data
+    - TemplateMetadata
+      should use ViewEncapsulation.Emulated by default
+      should serialize with full data
+      should serialize with no data
+    - CompileAnimationStyleMetadata
+      should serialize with full data
+      should serialize with no data
+    - CompileAnimationAnimateMetadata
+      should serialize with full data
+      should serialize with no data
+    - CompileAnimationSequenceMetadata
+      should serialize with full data
+      should serialize with no data
+    - CompileAnimationGroupMetadata
+      should serialize with full data
+      should serialize with no data
+    - CompileAnimationKeyframesSequenceMetadata
+      should serialize with full data
+      should serialize with no data
+    - CompileAnimationEntryMetadata
+      should serialize with full data
+      should serialize with no data
+  - HtmlLexer
+    - line/column numbers
+      should work without newlines
+      should work with one newline
+      should work with multiple newlines
+      should work with CR and LF
+    - comments
+      should parse comments
+      should store the locations
+      should report <!- without -
+      should report missing end comment
+      should accept comments finishing by too many dashes (even number)
+      should accept comments finishing by too many dashes (odd number)
+    - doctype
+      should parse doctypes
+      should store the locations
+      should report missing end doctype
+    - CDATA
+      should parse CDATA
+      should store the locations
+      should report <![ without CDATA[
+      should report missing end cdata
+    - open tags
+      should parse open tags without prefix
+      should parse namespace prefix
+      should parse void tags
+      should allow whitespace after the tag name
+      should store the locations
+    - attributes
+      should parse attributes without prefix
+      should parse attributes with prefix
+      should parse attributes whose prefix is not valid
+      should parse attributes with single quote value
+      should parse attributes with double quote value
+      should parse attributes with unquoted value
+      should allow whitespace
+      should parse attributes with entities in values
+      should not decode entities without trailing ";"
+      should parse attributes with "&" in values
+      should parse values with CR and LF
+      should store the locations
+    - closing tags
+      should parse closing tags without prefix
+      should parse closing tags with prefix
+      should allow whitespace
+      should store the locations
+      should report missing name after </
+      should report missing >
+    - entities
+      should parse named entities
+      should parse hexadecimal entities
+      should parse decimal entities
+      should store the locations
+      should report malformed/unknown entities
+    - regular text
+      should parse text
+      should handle CR & LF
+      should parse entities
+      should parse text starting with "&"
+      should store the locations
+      should allow "<" in text nodes
+      should parse valid start tag in interpolation
+    - raw text
+      should parse text
+      should not detect entities
+      should ignore other opening tags
+      should ignore other closing tags
+      should store the locations
+    - escapable raw text
+      should parse text
+      should detect entities
+      should ignore other opening tags
+      should ignore other closing tags
+      should store the locations
+    - errors
+      should include 2 lines of context in message
+    - unicode characters
+      should support unicode characters
+  - Create DirectiveMetadata
+    - lifecycle

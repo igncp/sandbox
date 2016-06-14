@@ -1,0 +1,138 @@
+  - Style sanitizer
+    sanitizes values
+    rejects unblanaced quotes
+    accepts transform functions
+    sanitizes URLs
+    accepts quoted URLs
+  - URL sanitizer
+    reports unsafe URLs
+    - valid URLs
+    - invalid URLs
+  - HTML sanitizer
+    serializes nested structures
+    serializes self closing elements
+    supports namespaced elements
+    supports namespaced attributes
+    supports sanitizing plain text
+    ignores non-element, non-attribute nodes
+    escapes entities
+    - should strip dangerous elements
+    - should strip dangerous attributes
+      should prevent mXSS attacks
+  - test APIs for the browser
+    - angular2 jasmine matchers
+      - toHaveCssClass
+        should assert that the CSS class is present
+        should assert that the CSS class is not present
+      - toHaveCssStyle
+        should assert that the CSS style is present
+        should assert that the styles are matched against the element
+    - using the async helper
+      should run async tests with XHRs
+    - using the test injector with the inject helper
+      - setting up Providers
+        provides a real XHR instance
+        should allow the use of fakeAsync
+    - errors
+      should fail when an XHR fails
+        should fail with an error from a promise
+    - test component builder
+      should allow an external templateUrl
+  - apps with router components
+    should build without a problem
+  - DomRenderer integration
+    should work
+  - DomSharedStylesHost
+    should add existing styles to new hosts
+    should add new styles to hosts
+    should add styles only once to hosts
+    should use the document head as default host
+  - WebAnimationsPlayer
+    should pause the animation
+    should play the animation
+    should finish the animation
+    should make use of the onfinish function
+    should trigger the subscribe functions when complete
+    should finish right away when finish is called directly
+    should trigger finish when destroy is called if the animation has not finished already
+    should destroy itself automatically if a parent player is not present
+  - KeyEvents
+    should ignore unrecognized events
+    should correctly parse event names
+    should alias esc to escape
+  - EventManager
+    should delegate event bindings to plugins that are passed in from the most generic one to the most specific one
+    should delegate event bindings to the first plugin supporting the event
+    should throw when no plugin can handle the event
+    events are caught when fired from a child
+    should add and remove global event listeners
+  - using the async helper
+    should run normal tests
+    should run normal async tests
+    should run async tests with tasks
+    should run async tests with promises
+  - using the test injector with the inject helper
+    - setting up Providers
+      should use set up providers
+      should wait until returned promises
+      should allow the use of fakeAsync
+      should allow use of "done"
+      - using beforeEach
+        should use modified providers
+      - using async beforeEach
+        should use asynchronously modified value
+    - per test providers
+      should allow per test providers
+      should return value from inject
+  - errors
+    should fail when an asynchronous error is thrown
+      throws an async error
+    should fail when a returned promise is rejected
+      should fail with an error from a promise
+    - using beforeEachProviders
+      - nested beforeEachProviders
+        should fail when the injector has already been used
+  - test component builder
+    should instantiate a component with valid DOM
+    should allow changing members of the component
+    should override a template
+    should override a view
+    should override component dependencies
+    should override a provider
+    should override a viewProvider
+  - profiler
+    should time change detection
+    should time change detection with recording
+  - bootstrap factory method
+    should throw if bootstrapped Directive is not a Component
+    should throw if no element is found
+      should forward the error to promise when bootstrap fails
+      should invoke the default exception handler when bootstrap fails
+    should create an injector promise
+    should display hello world
+    should support multiple calls to bootstrap
+    should not crash if change detection is invoked when the root component is disposed
+    should unregister change detectors when components are disposed
+    should register each application with the testability registry
+  - title service
+    should allow reading initial title
+    should set a title on the injected document
+    should reset title to empty string if title not provided
+  - CachedXHR
+    should throw exception if $templateCache is not found
+    should resolve the Promise with the cached file content on success
+    should reject the Promise on failure
+    should allow fakeAsync Tests to load components with templateUrl synchronously
+  - XHRImpl
+    should resolve the Promise with the file content on success
+    should reject the Promise on failure
+  - BrowserDetection
+    should update text nodes
+    should update any element property/attributes/class/style(s) independent of the compilation on the root element and other elements
+    should update any template comment property/attributes
+    should add and remove fragments
+      should call actions on the element
+      should listen to events
+    should allocate ids
+    should serialize objects
+    should deserialize objects

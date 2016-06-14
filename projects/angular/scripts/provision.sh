@@ -7,7 +7,7 @@ appendIfLineDoesNotExist() { LINE=$1 && FILE=$2 && grep -q -F "$LINE" $FILE || e
 if ! type tree ; then
   echo "install basic packages"
   sudo apt-get update
-  sudo apt-get install -y curl git unzip git-extras tree
+  sudo apt-get install -y curl git unzip ack-grep git-extras tree
   git config --global user.email "you@example.com" && git config --global user.name "Your Name"
 fi
 

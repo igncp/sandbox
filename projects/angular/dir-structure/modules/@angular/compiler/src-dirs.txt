@@ -1,0 +1,40 @@
++ Tree
+  compiler/src/
+  ├── animation
+  ├── css
+  ├── expression_parser
+  ├── facade -> ../../facade/src
+  ├── i18n
+  ├── output
+  ├── schema
+  └── view_compiler
+
+
++ Files
+  15 view_compiler
+  11 output
+
+  6 i18n
+  4 animation
+  3 expression_parser
+  2 schema
+  2 css
+
+
++ Lines
+  2819 output
+  2655 view_compiler
+
+  1553 expression_parser
+  1502 css
+
+  1079 animation
+  999 i18n
+
+  332 schema
+
+
++ Extensions (including current)
+  73 ts
+   2 dart
+
