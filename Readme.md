@@ -5,7 +5,7 @@ A repository to study external projects. The key points are:
 - Automation: Automate as much as possible, even the trivial things
 - Performance: Don't do the same twice if it was already done or can be done once and saved in memory / disk
 - Few interdependencies: Keep it simple, even if that means more code repetition for sections that may change in the future
-- Idempotent scripts: Running the scripts twice should result in the same state as running them once
+- Running the scripts twice or more should result in the same state as running them once
 
 Some of the commands used to explore the projects are from [the explorers repository](https://github.com/igncp/explorers).
 
