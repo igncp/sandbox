@@ -1,0 +1,79 @@
++ Files
+  di.ts
+  directives.ts
+  lifecycle_hooks.ts
+  view.ts
+
+
++ Exports (by file)
+  directives.ts: class ComponentMetadata extends DirectiveMetadata
+  directives.ts: class DirectiveMetadata extends InjectableMetadata
+  directives.ts: class HostBindingMetadata
+  directives.ts: class HostListenerMetadata
+  directives.ts: class InputMetadata
+  directives.ts: class OutputMetadata
+  directives.ts: class PipeMetadata extends InjectableMetadata
+  
+  di.ts: class AttributeMetadata extends DependencyMetadata
+  di.ts: class ContentChildMetadata extends QueryMetadata
+  di.ts: class ContentChildrenMetadata extends QueryMetadata
+  di.ts: class QueryMetadata extends DependencyMetadata
+  di.ts: class ViewChildMetadata extends ViewQueryMetadata
+  di.ts: class ViewChildrenMetadata extends ViewQueryMetadata
+  di.ts: class ViewQueryMetadata extends QueryMetadata
+
+  lifecycle_hooks.ts: abstract class AfterContentChecked { abstract ngAfterContentChecked(); }
+  lifecycle_hooks.ts: abstract class AfterContentInit { abstract ngAfterContentInit(); }
+  lifecycle_hooks.ts: abstract class AfterViewChecked { abstract ngAfterViewChecked(); }
+  lifecycle_hooks.ts: abstract class AfterViewInit { abstract ngAfterViewInit(); }
+  lifecycle_hooks.ts: abstract class DoCheck { abstract ngDoCheck(); }
+  lifecycle_hooks.ts: abstract class OnChanges { abstract ngOnChanges(changes: SimpleChanges); }
+  lifecycle_hooks.ts: abstract class OnDestroy { abstract ngOnDestroy(); }
+  lifecycle_hooks.ts: abstract class OnInit { abstract ngOnInit(); }
+  lifecycle_hooks.ts: enum LifecycleHooks
+  lifecycle_hooks.ts: interface SimpleChanges {[propName: string]: SimpleChange}
+  lifecycle_hooks.ts: var LIFECYCLE_HOOKS_VALUES = [
+
+  view.ts: class ViewMetadata
+  view.ts: enum ViewEncapsulation
+  view.ts: var VIEW_ENCAPSULATION_VALUES
+
+
++ All exports sorted
+  abstract class AfterContentChecked { abstract ngAfterContentChecked(); }
+  abstract class AfterContentInit { abstract ngAfterContentInit(); }
+  abstract class AfterViewChecked { abstract ngAfterViewChecked(); }
+  abstract class AfterViewInit { abstract ngAfterViewInit(); }
+  abstract class DoCheck { abstract ngDoCheck(); }
+  abstract class OnChanges { abstract ngOnChanges(changes: SimpleChanges); }
+  abstract class OnDestroy { abstract ngOnDestroy(); }
+  abstract class OnInit { abstract ngOnInit(); }
+
+  class AttributeMetadata extends DependencyMetadata
+  class ComponentMetadata extends DirectiveMetadata
+  class ContentChildMetadata extends QueryMetadata
+  class ContentChildrenMetadata extends QueryMetadata
+  class DirectiveMetadata extends InjectableMetadata
+  class HostBindingMetadata
+  class HostListenerMetadata
+  class InputMetadata
+  class OutputMetadata
+  class PipeMetadata extends InjectableMetadata
+  class QueryMetadata extends DependencyMetadata
+  class ViewChildMetadata extends ViewQueryMetadata
+  class ViewChildrenMetadata extends ViewQueryMetadata
+  class ViewMetadata
+  class ViewQueryMetadata extends QueryMetadata
+
+  enum LifecycleHooks
+  enum ViewEncapsulation
+
+  interface SimpleChanges {[propName: string]: SimpleChange}
+
+  var LIFECYCLE_HOOKS_VALUES
+  var VIEW_ENCAPSULATION_VALUES
+
+
++ Notes:
+  Some extended classes come from @angular/core/src/di/metadata.ts (e.g. DependencyMetadata, InjectableMetadata)
+

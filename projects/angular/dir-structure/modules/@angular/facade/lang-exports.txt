@@ -1,0 +1,66 @@
+class DateWrapper
+class FunctionWrapper
+class Json
+class NumberParseError extends Error
+class NumberWrapper
+class RegExpMatcherWrapper
+class RegExpWrapper
+class StringJoiner
+class StringWrapper
+
+
+const IS_DART = false;
+
+
+function assertionsEnabled(): boolean
+function bitWiseAnd(values: number[]): number
+function bitWiseOr(values: number[]): number
+function deserializeEnum(val, values: Map<number, any>): any
+function enableProdMode()
+function escape(s: string): string
+function evalExpression(sourceUrl: string, expr: string, declarations: string,
+function getMapKey<T>(value: T): T
+function getSymbolIterator(): string | symbol
+function getTypeNameForDebugging(type: Type): string
+function hasConstructor(value: Object, type: Type): boolean
+
+function isArray(obj: any): boolean
+function isBlank(obj: any): boolean
+function isBoolean(obj: any): boolean
+function isDate(obj): boolean
+function isFunction(obj: any): boolean
+function isJsObject(o: any): boolean
+function isNumber(obj: any): boolean
+function isPresent(obj: any): boolean
+function isPrimitive(obj: any): boolean
+function isPromise(obj: any): boolean
+function isStrictStringMap(obj: any): boolean
+function isStringMap(obj: any): boolean
+function isString(obj: any): boolean
+function isType(obj: any): boolean
+
+function lockMode()
+function looseIdentical(a, b): boolean
+function noop() {}
+function normalizeBlank(obj: Object): any
+function normalizeBool(obj: boolean): boolean
+function print(obj: Error | Object)
+function resolveEnumToken(enumValue, val): string
+function scheduleMicroTask(fn: Function)
+function serializeEnum(val): number
+function setValueOnPath(global: any, path: string, value: any)
+function stringify(token): string
+function warn(obj: Error | Object)
+
+
+interface BrowserNodeGlobal
+interface ConcreteType extends Type { new (...args): any; }
+interface Type extends Function {}
+
+var Date = _global.Date;
+var Math = _global.Math;
+var RegExp = _global.RegExp;
+var Type = Function;
+
+{_global as global};
+
