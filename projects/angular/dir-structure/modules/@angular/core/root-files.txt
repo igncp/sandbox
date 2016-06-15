@@ -1,0 +1,21 @@
+ 1506 metadata.ts
+
+  444 application_ref.ts
+
+   55 platform_directives_and_pipes.ts
+   54 application_tokens.ts
+   45 di.ts
+   30 application_common_providers.ts
+
+   26 change_detection.ts
+   25 platform_common_providers.ts: const PLATFORM_COMMON_PROVIDERS (Console, core providers and testability registry)
+   23 security.ts: enum SecurityContext and abstract class SanitizationService
+   13 console.ts
+   11 linker.ts: Just exports from. "Public API for compiler"
+
+    3 angular_entrypoint.ts: "TS does not have AngularEntrypoint"
+    2 zone.ts: NgZone, NgZoneError
+    2 util.ts
+    2 render.ts
+    1 prod_mode.ts
+

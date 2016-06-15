@@ -1,0 +1,31 @@
+Files metadata.ts 
+   1506 modules/@angular/core/src/metadata.ts
+
+    246 modules/@angular/core/src/di/metadata.ts
+
+    116 modules/@angular/core/src/animation/metadata.ts
+
+     62 modules/@angular/upgrade/src/metadata.ts
+     51 modules/@angular/router/src/metadata/metadata.ts
+     43 modules/@angular/examples/core/ts/metadata/metadata.ts
+
+
+Directories `metadata`:
+  modules/@angular/router/src/metadata
+ 
+  modules/@angular/core/src/metadata
+  modules/@angular/core/test/metadata
+
+  modules/@angular/examples/core/ts/metadata
+
+
+Rest (excluding *.dart):
+  modules/@angular/compiler/src/compile_metadata.ts
+  modules/@angular/compiler/src/metadata_resolver.ts
+  
+  modules/@angular/compiler/test/compile_metadata_spec.ts
+  modules/@angular/compiler/test/metadata_resolver_fixture.ts
+  modules/@angular/compiler/test/metadata_resolver_spec.ts
+
+  modules/@angular/upgrade/test/metadata_spec.ts
+

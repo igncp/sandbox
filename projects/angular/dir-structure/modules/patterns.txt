@@ -1,0 +1,18 @@
++ Classes finishing in underscore:
+  export class DomRootRenderer_ extends DomRootRenderer
+  export class ClientMessageBrokerFactory_ extends ClientMessageBrokerFactory
+  export class ClientMessageBroker_ extends ClientMessageBroker
+  export class ServiceMessageBrokerFactory_ extends ServiceMessageBrokerFactory
+  export class ServiceMessageBroker_ extends ServiceMessageBroker
+  export class MockMessageBrokerFactory extends ClientMessageBrokerFactory_
+  export class ResolvedReflectiveProvider_ implements ResolvedReflectiveBinding
+  export class ReflectiveInjector_ implements ReflectiveInjector
+  export class DynamicComponentLoader_ extends DynamicComponentLoader
+  export class ViewContainerRef_ implements ViewContainerRef
+  export class PlatformRef_ extends PlatformRef
+  export class ApplicationRef_ extends ApplicationRef
+  export class JSONPConnection_ extends JSONPConnection
+  export class JSONPBackend_ extends JSONPBackend
+
+  The pattern is like this: export class FooBar_ extends FooBar : where FooBar is an abstract class and FooBar_ not. Also, although not always, FooBar_ is usually decorated with Injectable().
+

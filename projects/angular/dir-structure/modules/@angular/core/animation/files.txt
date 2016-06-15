@@ -1,0 +1,126 @@
++ Lines count:  
+  116 metadata.ts
+  113 animation_style_util.ts
+
+   83 animation_sequence_player.ts
+   72 animation_group_player.ts
+   57 active_animation_players_map.ts
+
+   39 animation_player.ts
+   15 animation_driver.ts
+
+    5 animation_keyframe.ts
+    3 animation_styles.ts
+    3 animation_constants.ts
+
+
++ Exports by file:
+  active_animation_players_map.ts:class ActiveAnimationPlayersMap
+
+  animation_constants.ts:const ANY_STATE = '*';
+  animation_constants.ts:const EMPTY_STATE = 'void';
+  animation_constants.ts:const FILL_STYLE_FLAG = 'true'; // TODO (matsko): change to boolean
+
+  animation_driver.ts:abstract class AnimationDriver
+  animation_driver.ts:class NoOpAnimationDriver extends AnimationDriver
+
+  animation_group_player.ts:class AnimationGroupPlayer implements AnimationPlayer
+
+  animation_keyframe.ts:class AnimationKeyframe
+
+  animation_player.ts:abstract class AnimationPlayer
+  animation_player.ts:class NoOpAnimationPlayer implements AnimationPlayer
+
+  animation_sequence_player.ts:class AnimationSequencePlayer implements AnimationPlayer
+
+  animation_styles.ts:class AnimationStyles
+  animation_style_util.ts:class AnimationStyleUtil
+
+  metadata.ts:abstract class AnimationMetadata {}
+  metadata.ts:abstract class AnimationStateMetadata {}
+  metadata.ts:abstract class AnimationWithStepsMetadata extends AnimationMetadata
+  metadata.ts:class AnimationAnimateMetadata extends AnimationMetadata
+  metadata.ts:class AnimationEntryMetadata
+  metadata.ts:class AnimationGroupMetadata extends AnimationWithStepsMetadata
+  metadata.ts:class AnimationKeyframesSequenceMetadata extends AnimationMetadata
+  metadata.ts:class AnimationSequenceMetadata extends AnimationWithStepsMetadata
+  metadata.ts:class AnimationStateDeclarationMetadata extends AnimationStateMetadata
+  metadata.ts:class AnimationStateTransitionMetadata extends AnimationStateMetadata
+  metadata.ts:class AnimationStyleMetadata extends AnimationMetadata
+  metadata.ts:const AUTO_STYLE = "*";
+  metadata.ts:function animate(timing: string | number,
+  metadata.ts:function group(steps: AnimationMetadata[]): AnimationGroupMetadata
+  metadata.ts:function keyframes(steps: AnimationStyleMetadata|AnimationStyleMetadata[]): AnimationKeyframesSequenceMetadata
+  metadata.ts:function sequence(steps: AnimationMetadata[]): AnimationSequenceMetadata
+  metadata.ts:function state(stateNameExpr: string, styles: AnimationStyleMetadata): AnimationStateDeclarationMetadata
+  metadata.ts:function style(tokens: string|{[key: string]: string | number}|Array<string|{[key: string]: string | number}>): AnimationStyleMetadata
+  metadata.ts:function transition(stateChangeExpr: string, animationData: AnimationMetadata|AnimationMetadata[]): AnimationStateTransitionMetadata
+  metadata.ts:function trigger(name: string, animation: AnimationMetadata|AnimationMetadata[]): AnimationEntryMetadata
+
++ Exports (all):
+  abstract class AnimationDriver
+  abstract class AnimationMetadata {}
+  abstract class AnimationPlayer
+  abstract class AnimationStateMetadata {}
+  abstract class AnimationWithStepsMetadata extends AnimationMetadata
+
+  class ActiveAnimationPlayersMap
+  class AnimationAnimateMetadata extends AnimationMetadata
+  class AnimationEntryMetadata
+  class AnimationGroupMetadata extends AnimationWithStepsMetadata
+  class AnimationGroupPlayer implements AnimationPlayer
+  class AnimationKeyframe
+  class AnimationKeyframesSequenceMetadata extends AnimationMetadata
+  class AnimationSequenceMetadata extends AnimationWithStepsMetadata
+  class AnimationSequencePlayer implements AnimationPlayer
+  class AnimationStateDeclarationMetadata extends AnimationStateMetadata
+  class AnimationStateTransitionMetadata extends AnimationStateMetadata
+  class AnimationStyleMetadata extends AnimationMetadata
+  class AnimationStyleUtil
+  class AnimationStyles
+  class NoOpAnimationDriver extends AnimationDriver
+  class NoOpAnimationPlayer implements AnimationPlayer
+
+  const ANY_STATE = '*';
+  const AUTO_STYLE = "*";
+  const EMPTY_STATE = 'void';
+  const FILL_STYLE_FLAG = 'true'; // TODO (matsko): change to boolean
+
+  function animate(timing: string | number,
+  function group(steps: AnimationMetadata[]): AnimationGroupMetadata
+  function keyframes(steps: AnimationStyleMetadata|AnimationStyleMetadata[]): AnimationKeyframesSequenceMetadata
+  function sequence(steps: AnimationMetadata[]): AnimationSequenceMetadata
+  function state(stateNameExpr: string, styles: AnimationStyleMetadata): AnimationStateDeclarationMetadata
+  function style(tokens: string|{[key: string]: string | number}|Array<string|{[key: string]: string | number}>): AnimationStyleMetadata
+  function transition(stateChangeExpr: string, animationData: AnimationMetadata|AnimationMetadata[]): AnimationStateTransitionMetadata
+  function trigger(name: string, animation: AnimationMetadata|AnimationMetadata[]): AnimationEntryMetadata
+
+
++ Classes hierarchy:
+  1. abstract class AnimationDriver
+    1.1 class NoOpAnimationDriver extends AnimationDriver
+
+  2. abstract class AnimationMetadata
+    2.1 abstract class AnimationWithStepsMetadata extends AnimationMetadata
+      2.1.1 class AnimationGroupMetadata extends AnimationWithStepsMetadata 
+      2.1.2 class AnimationSequenceMetadata extends AnimationWithStepsMetadata
+
+    2.2 class AnimationAnimateMetadata extends AnimationMetadata
+    2.3 class AnimationKeyframesSequenceMetadata extends AnimationMetadata
+    2.4 class AnimationStyleMetadata extends AnimationMetadata
+
+  3. abstract class AnimationPlayer
+    3.1 class AnimationGroupPlayer implements AnimationPlayer
+    3.2 class AnimationSequencePlayer implements AnimationPlayer
+    3.3 class NoOpAnimationPlayer implements AnimationPlayer
+
+  4. abstract class AnimationStateMetadata
+    4.1 class AnimationStateDeclarationMetadata extends AnimationStateMetadata
+    4.2 class AnimationStateTransitionMetadata extends AnimationStateMetadata
+
+  5. class ActiveAnimationPlayersMap
+  6. class AnimationEntryMetadata
+  7. class AnimationKeyframe
+  8. class AnimationStyleUtil
+  9. class AnimationStyles
+

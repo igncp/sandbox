@@ -1,0 +1,16 @@
++ files.txt
+  animate_metadata
+  driver
+  empty_state
+  entry_metadata
+  group_player
+  keyframe
+  metadata
+  player
+  sequence_player
+  state
+  state_declaration
+  state_transition 
+  style
+  with_steps_metadata
+
