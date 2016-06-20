@@ -1,0 +1,30 @@
+
+ project  : repository
+ repo age : 1 year, 1 month
+ active   : 397 days
+ commits  : 1930
+ files    : 262
+ authors  : 
+  1036	Dan Abramov             53.7%
+    69	Tim Dorr                3.6%
+    57	Lee Bannard             3.0%
+    52	Daniel Bugl             2.7%
+    46	Andrew Clark            2.4%
+    27	Nicola Molinari         1.4%
+    22	Ken Carpenter           1.1%
+    18	Harry                   0.9%
+    17	C. T. Lin               0.9%
+    15	Daniel Lytkin           0.8%
+    15	Mark Erikson            0.8%
+    12	Max Stoiber             0.6%
+    10	Mike Kidder             0.5%
+     9	Franky Chung            0.5%
+     9	Ramana Venkata          0.5%
+     7	Cory House              0.4%
+     7	Daniel Martinez         0.4%
+     7	David Zukowski          0.4%
+     7	Gert Hengeveld          0.4%
+     7	Lars Kappert            0.4%
+     7	Mark Pedrotti           0.4%
+     7	Mateusz Zatorski        0.4%
+     7	Misha Moroshko          0.4%

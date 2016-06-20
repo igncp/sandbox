@@ -1,0 +1,22 @@
++ Tree
+  src/
+  ├── applyMiddleware.js
+  ├── bindActionCreators.js
+  ├── combineReducers.js
+  ├── compose.js
+  ├── createStore.js
+  ├── index.js
+  └── utils
+      └── warning.js
+
+
++ Lines
+  253 src/createStore.js
+
+  139 src/combineReducers.js
+
+   48 src/bindActionCreators.js
+   37 src/applyMiddleware.js
+   34 src/index.js
+   21 src/utils/warning.js
+   20 src/compose.js

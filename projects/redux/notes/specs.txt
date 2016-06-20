@@ -1,0 +1,74 @@
+- bindActionCreators
+  wraps the action creators with the dispatch function
+  skips non-function values in the passed object
+  supports wrapping a single function only
+  throws for an undefined actionCreator
+  throws for a null actionCreator
+  throws for a primitive actionCreator
+- Utils
+  - compose
+    composes from right to left
+    composes functions from right to left
+    can be seeded with multiple arguments
+    returns the first given argument if given no functions
+- createStore
+  exposes the public API
+  throws if reducer is not a function
+  passes the initial action and the initial state
+  applies the reducer to the previous state
+  applies the reducer to the initial state
+  preserves the state when replacing a reducer
+  supports multiple subscriptions
+  only removes listener once when unsubscribe is called
+  only removes relevant listener when unsubscribe is called
+  supports removing a subscription within a subscription
+  delays unsubscribe until the end of current dispatch
+  delays subscribe until the end of current dispatch
+  uses the last snapshot of subscribers during nested dispatch
+  provides an up-to-date state when a subscriber is notified
+  only accepts plain object actions
+  handles nested dispatches gracefully
+  does not allow dispatch() from within a reducer
+  recovers from an error within a reducer
+  throws if action type is missing
+  throws if action type is undefined
+  does not throw if action type is falsy
+  accepts enhancer as the third argument
+  accepts enhancer as the second argument if initial state is missing
+  throws if enhancer is neither undefined nor a function
+  throws if nextReducer is not a function
+  throws if listener is not a function
+  - Symbol.observable interop point
+    should exist
+    - returned value
+      should be subscribable
+      should throw a TypeError if an observer object is not supplied to subscribe
+      should return a subscription object when subscribed
+    should pass an integration test with no unsubscribe
+    should pass an integration test with an unsubscribe
+    should pass an integration test with a common library (RxJS)
+- Utils
+  - warning
+    calls console.error when available
+    does not throw when console.error is not available
+    does not throw when console is not available
+- TypeScript definitions
+  should compile against index.d.ts
+- applyMiddleware
+  wraps dispatch method with middleware once
+  passes recursive dispatches through the middleware chain
+  works with thunk middleware
+  keeps unwrapped dispatch available while middleware is initializing
+- Utils
+  - combineReducers
+    returns a composite reducer that maps the state keys to given reducers
+    ignores all props which are not a function
+    throws an error if a reducer returns undefined handling an action
+    throws an error on first call if a reducer returns undefined initializing
+    catches error thrown in reducer when initializing and re-throw
+    allows a symbol to be used as an action type
+    maintains referential equality if the reducers it is combining do
+    does not have referential equality if one of the reducers changes something
+    throws an error on first call if a reducer attempts to handle a private action
+    warns if no reducers are passed to combineReducers
+    warns if input state does not match reducer shape

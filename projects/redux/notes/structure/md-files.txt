@@ -1,0 +1,107 @@
++ Files by lines
+   631 ./docs/FAQ.md
+   538 ./docs/recipes/ImplementingUndoHistory.md
+   509 ./docs/recipes/ReducingBoilerplate.md
+   501 ./docs/advanced/AsyncActions.md
+   490 ./docs/recipes/WritingTests.md
+   489 ./docs/advanced/Middleware.md
+   428 ./docs/basics/UsageWithReact.md
+   419 ./docs/basics/Reducers.md
+   371 ./docs/basics/ExampleTodoList.md
+   371 ./docs/advanced/ExampleRedditAPI.md
+   331 ./docs/recipes/ComputingDerivedData.md
+   285 ./docs/recipes/ServerRendering.md
+   246 ./docs/api/applyMiddleware.md
+   215 ./README.md
+   205 ./docs/Troubleshooting.md
+   177 ./CONTRIBUTING.md
+   172 ./docs/introduction/Examples.md
+   150 ./docs/basics/Actions.md
+   136 ./docs/api/Store.md
+   135 ./docs/introduction/Ecosystem.md
+   134 ./docs/Glossary.md
+   121 ./docs/api/combineReducers.md
+   107 ./docs/api/bindActionCreators.md
+   105 ./docs/basics/DataFlow.md
+    95 ./docs/introduction/ThreePrinciples.md
+    76 ./docs/basics/Store.md
+    74 ./CODE_OF_CONDUCT.md
+    66 ./docs/recipes/UsingObjectSpreadOperator.md
+    66 ./docs/introduction/PriorArt.md
+    55 ./docs/api/createStore.md
+    44 ./docs/README.md
+    43 ./docs/api/README.md
+    37 ./docs/api/compose.md
+    30 ./docs/recipes/MigratingToRedux.md
+    21 ./LICENSE.md
+    19 ./PATRONS.md
+    15 ./docs/advanced/AsyncFlow.md
+    12 ./docs/recipes/README.md
+    12 ./docs/basics/README.md
+    11 ./docs/introduction/Motivation.md
+    10 ./docs/advanced/README.md
+     7 ./docs/introduction/README.md
+     6 ./docs/Feedback.md
+     4 ./docs/advanced/UsageWithReactRouter.md
+     4 ./docs/advanced/NextSteps.md
+     4 ./CHANGELOG.md
+     3 ./examples/README.md
+
+
++ Tree
+  .
+  ├── CHANGELOG.md
+  ├── CODE_OF_CONDUCT.md
+  ├── CONTRIBUTING.md
+  ├── docs
+  │   ├── advanced
+  │   │   ├── AsyncActions.md
+  │   │   ├── AsyncFlow.md
+  │   │   ├── ExampleRedditAPI.md
+  │   │   ├── Middleware.md
+  │   │   ├── NextSteps.md
+  │   │   ├── README.md
+  │   │   └── UsageWithReactRouter.md
+  │   ├── api
+  │   │   ├── applyMiddleware.md
+  │   │   ├── bindActionCreators.md
+  │   │   ├── combineReducers.md
+  │   │   ├── compose.md
+  │   │   ├── createStore.md
+  │   │   ├── README.md
+  │   │   └── Store.md
+  │   ├── basics
+  │   │   ├── Actions.md
+  │   │   ├── DataFlow.md
+  │   │   ├── ExampleTodoList.md
+  │   │   ├── README.md
+  │   │   ├── Reducers.md
+  │   │   ├── Store.md
+  │   │   └── UsageWithReact.md
+  │   ├── FAQ.md
+  │   ├── Feedback.md
+  │   ├── Glossary.md
+  │   ├── introduction
+  │   │   ├── Ecosystem.md
+  │   │   ├── Examples.md
+  │   │   ├── Motivation.md
+  │   │   ├── PriorArt.md
+  │   │   ├── README.md
+  │   │   └── ThreePrinciples.md
+  │   ├── README.md
+  │   ├── recipes
+  │   │   ├── ComputingDerivedData.md
+  │   │   ├── ImplementingUndoHistory.md
+  │   │   ├── MigratingToRedux.md
+  │   │   ├── README.md
+  │   │   ├── ReducingBoilerplate.md
+  │   │   ├── ServerRendering.md
+  │   │   ├── UsingObjectSpreadOperator.md
+  │   │   └── WritingTests.md
+  │   └── Troubleshooting.md
+  ├── examples
+  │   └── README.md
+  ├── LICENSE.md
+  ├── PATRONS.md
+  └── README.md
+
