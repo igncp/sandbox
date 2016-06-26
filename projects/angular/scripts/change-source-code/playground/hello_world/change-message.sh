@@ -15,19 +15,11 @@ compilePlaygroundDir() {
   $TSC -p modules/tsconfig.json
 }
 
-replaceString() {
-  sed -i "s/$1/$2/" ~/repository/modules/playground/src/hello_world/index.ts
-}
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 
 cd ~/repository/
 
 git reset --hard HEAD
-
-replaceString "this.greeting = 'howdy'" "this.greeting = 'hiyas'"
-replaceString "change greeting" "change message"
-replaceString "<span red>" "<span blue>"
-replaceString "{selector: '\[red\]'}" "{selector: '\[blue\]'}"
-replaceString "RedDec" "BlueDec"
-replaceString "el.nativeElement, 'color', 'red'" "el.nativeElement, 'color', 'blue'"
+git apply $SCRIPT_DIR/patch.diff
 
 time compilePlaygroundDir

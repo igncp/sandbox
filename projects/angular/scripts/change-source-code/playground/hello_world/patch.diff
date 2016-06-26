@@ -1,0 +1,44 @@
+diff --git a/modules/playground/src/hello_world/index.ts b/modules/playground/src/hello_world/index.ts
+index 0c2e2bf..3fdba69 100644
+--- a/modules/playground/src/hello_world/index.ts
++++ b/modules/playground/src/hello_world/index.ts
+@@ -20,12 +20,12 @@ export class GreetingService {
+ 
+ // Directives are light-weight. They don't allow new
+ // expression contexts (use @Component for those needs).
+-@Directive({selector: '[red]'})
+-export class RedDec {
++@Directive({selector: '[blue]'})
++export class BlueDec {
+   // ElementRef is always injectable and it wraps the element on which the
+   // directive was found by the compiler.
+   constructor(el: ElementRef, renderer: Renderer) {
+-    renderer.setElementStyle(el.nativeElement, 'color', 'red');
++    renderer.setElementStyle(el.nativeElement, 'color', 'blue');
+   }
+ }
+ 
+@@ -44,18 +44,18 @@ export class RedDec {
+   viewProviders: [GreetingService],
+   // Expressions in the template (like {{greeting}}) are evaluated in the
+   // context of the HelloCmp class below.
+-  template: `<div class="greeting">{{greeting}} <span red>world</span>!</div>
+-           <button class="changeButton" (click)="changeGreeting()">change greeting</button>`,
++  template: `<div class="greeting">{{greeting}} <span blue>world</span>!</div>
++           <button class="changeButton" (click)="changeGreeting()">change message</button>`,
+   // All directives used in the template need to be specified. This allows for
+-  // modularity (RedDec can only be used in this template)
++  // modularity (BlueDec can only be used in this template)
+   // and better tooling (the template can be invalidated if the attribute is
+   // misspelled).
+-  directives: [RedDec]
++  directives: [BlueDec]
+ })
+ export class HelloCmp {
+   greeting: string;
+ 
+   constructor(service: GreetingService) { this.greeting = service.greeting; }
+ 
+-  changeGreeting(): void { this.greeting = 'howdy'; }
++  changeGreeting(): void { this.greeting = 'hiyas'; }
+ }

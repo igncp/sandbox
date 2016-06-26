@@ -12,9 +12,9 @@
   ├── cjs-jasmine
   ├── code.angularjs.org
   ├── karma
-  ├── npm
+  ├── npm: scripts that check npm dependencies
   ├── public_api_guard
-  ├── travis
+  ├── travis: contains travis-fold
   ├── tsc-watch
   ├── tsc-wrapped
   │   ├── src
