@@ -50,6 +50,7 @@ appendIfLineDoesNotExist 'bind '"'"'"\C-b":vi-bWord'"'"'' ~/.bashrc
 appendIfLineDoesNotExist 'source <(npm completion)' ~/.bashrc
 appendIfLineDoesNotExist 'PS1='\''${debian_chroot:+($debian_chroot)}\n\u@\h: \W$(__git_ps1) · '\''' ~/.bashrc
 # .bashrc config end
+
 # .bashrc alias start (for bash expansion)
 appendIfLineDoesNotExist 'alias rm="rm -rf"' ~/.bashrc
 appendIfLineDoesNotExist 'alias grep="grep -r"' ~/.bashrc
@@ -57,16 +58,33 @@ appendIfLineDoesNotExist 'alias grep="grep -r"' ~/.bashrc
 
 # vim start
 touch ~/.vimrc
-appendIfLineDoesNotExist 'set nobackup' ~/.vimrc
-appendIfLineDoesNotExist 'set number' ~/.vimrc
-appendIfLineDoesNotExist 'map ,e :e <C-R>=expand("%:p:h") . "/" <CR>' ~/.vimrc
-appendIfLineDoesNotExist "set tabstop=2" ~/.vimrc
-appendIfLineDoesNotExist "set shiftwidth=2" ~/.vimrc
-appendIfLineDoesNotExist 'set softtabstop=2' ~/.vimrc
-appendIfLineDoesNotExist 'set expandtab' ~/.vimrc
-appendIfLineDoesNotExist 'nnoremap ,cd :cd %:p:h<CR>:pwd<CR>' ~/.vimrc
-appendIfLineDoesNotExist 'nnoremap <Space> @d' ~/.vimrc
+cat > ~/.vimrc <<- EOM
+execute pathogen#infect()
+filetype plugin indent on
+syntax on
+set nobackup
+set number
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <Space> @d
+let g:vim_markdown_folding_disabled = 1
+EOM
+
+mkdir -p ~/.vim/autoload/ ~/.vim/bundle
+if [ ! -f ~/.vim/autoload/pathogen.vim ]; then curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim; fi
+if [ ! -d ~/.vim/bundle/vim-markdown ]; then git clone https://github.com/plasticboy/vim-markdown.git ~/.vim/bundle/vim-markdown; fi
 # vim end
+
+# tmux start
+cat > ~/.tmux.conf <<- EOM
+set -g status off
+set-window-option -g xterm-keys on
+EOM
+# tmux end
 
 installModulesIfNecessary() {
   PACKAGE_DIR=$1;
