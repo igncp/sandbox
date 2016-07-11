@@ -1,0 +1,1 @@
+:set prompt "\n\n\n\n\n\n\ESC[1;34m%s;\n\n\ESC[0;34mλ> \ESC[m"

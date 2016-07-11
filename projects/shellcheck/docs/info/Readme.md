@@ -10,7 +10,8 @@
 
 ## TODOs
 - [ ] compile from source using `cabal`
-- [ ] add ghc linter to vim using stack
+- [ ] add ghc linter to vim using `stack`
+- [x] debug with `ghci` with autokey bindings and clear output
 - [x] be able to run `quicktest` successfully
 - [x] be able to run `quickrun` successfully
 - [x] install Haskell with `stack`

@@ -1,6 +1,8 @@
 #!/bin/bash
 
 installVimPackage() { DIR=$1; REPO=$2; if [ ! -d ~/.vim/bundle/"$DIR" ]; then git clone https://github.com/$REPO.git ~/.vim/bundle/"$DIR"; fi }
+cpFileFromProvision() { FILE=$1; cp /project/provision/$FILE ~/$FILE; }
+
 
 if ! type tree ; then
   echo "installing basic packages"
@@ -20,57 +22,24 @@ if [ ! -d ~/logs ]; then
   mkdir ~/logs
 fi
 
-# .bashrc config start
-cat > ~/.bashrc <<- EOM
-cd ~/repository
-export PATH=$PATH:~/.local/bin
-bind '"\C-f":vi-fWord'
-bind '"\C-b":vi-bWord'
-PS1='${debian_chroot:+($debian_chroot)}\n\u@\h: \W$(__git_ps1) · '
-
-alias rm="rm -rf"
-alias ll="ls -lah"
-alias ls="ls -lah"
-EOM
-# .bashrc config end
+cpFileFromProvision .bashrc
+cpFileFromProvision .ghci
 
 # vim start
-cat > ~/.vimrc <<- EOM
-execute pathogen#infect()
-filetype plugin indent on
-syntax on
-set nobackup
-set noswapfile
-set number
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
-nnoremap <Space> @d
-let g:vim_markdown_folding_disabled = 1
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
-EOM
+  cpFileFromProvision .vimrc
 
-mkdir -p ~/.vim/autoload/ ~/.vim/bundle
-if [ ! -f ~/.vim/autoload/pathogen.vim ]; then curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim; fi
+  mkdir -p ~/.vim/autoload/ ~/.vim/bundle
+  if [ ! -f ~/.vim/autoload/pathogen.vim ]; then curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim; fi
 
-installVimPackage vim-markdown plasticboy/vim-markdown
-installVimPackage syntastic scrooloose/syntastic
-installVimPackage ctrlp.vim ctrlpvim/ctrlp.vim
-installVimPackage vimproc Shougo/vimproc.vim
-cd ~/repository/.vim/bundle/vimproc && make; cd -
-installVimPackage ghcmod.vim eagletmt/ghcmod-vim
+  installVimPackage vim-markdown plasticboy/vim-markdown
+  installVimPackage syntastic scrooloose/syntastic
+  installVimPackage ctrlp.vim ctrlpvim/ctrlp.vim
+  installVimPackage vimproc Shougo/vimproc.vim
+  cd ~/repository/.vim/bundle/vimproc && make; cd -
+  installVimPackage ghcmod.vim eagletmt/ghcmod-vim
 # vim end
 
-# tmux start
-cat > ~/.tmux.conf <<- EOM
-set -g status off
-set-window-option -g xterm-keys on
-EOM
-# tmux end
+cpFileFromProvision .tmux.conf
 
 if ! type cabal ; then
   echo "installing cabal"
@@ -96,5 +65,8 @@ if ! type stack ; then
     stack install && \
     stack install ghc-mod
 fi
+
+rm -rf ~/fixtures
+cp -r /project/provision/fixtures ~
 
 echo "finished provisioning"
