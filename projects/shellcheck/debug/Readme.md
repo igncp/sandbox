@@ -13,6 +13,8 @@ main
 :step
 ```
 
+Flows: [link](./flows.md)
+
 ## Cases
 
 - `:set args -V`

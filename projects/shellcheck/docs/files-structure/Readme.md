@@ -83,7 +83,7 @@ ShellCheck
 ├── ASTLib.hs
 ├── Checker.hs
 ├── Checks
-│   └── Commands.hs
+│   └── Commands.hs: Some checks related to commands (e.g. `echo` or `find`)
 ├── Data.hs: Constants values like shellcheckVersion, keywords, etc
 ├── Formatter
 │   ├── CheckStyle.hs

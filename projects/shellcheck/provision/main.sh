@@ -7,7 +7,7 @@ cpFileFromProvision() { FILE=$1; cp /project/provision/$FILE ~/$FILE; }
 if ! type tree ; then
   echo "installing basic packages"
   sudo apt-get update
-  sudo apt-get install -y curl git unzip ack-grep git-extras tree
+  sudo apt-get install -y curl git unzip ack-grep git-extras jq tree
   git config --global user.email "you@example.com" && git config --global user.name "Your Name"
 fi
 
@@ -35,7 +35,7 @@ cpFileFromProvision .ghci
   installVimPackage syntastic scrooloose/syntastic
   installVimPackage ctrlp.vim ctrlpvim/ctrlp.vim
   installVimPackage vimproc Shougo/vimproc.vim
-  cd ~/repository/.vim/bundle/vimproc && make; cd -
+  cd ~/.vim/bundle/vimproc && make; cd -
   installVimPackage ghcmod.vim eagletmt/ghcmod-vim
 # vim end
 
