@@ -1,3 +1,3 @@
 # High Level
 
-- (Pseudo Code)[./pseudo-code.md]
+- [Pseudo Code](./pseudo-code.md)
