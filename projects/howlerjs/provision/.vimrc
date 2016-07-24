@@ -3,6 +3,7 @@ filetype plugin indent on
 syntax on
 
 set nobackup
+set clipboard=unnamedplus
 set noswapfile
 set number
 set tabstop=2
@@ -23,3 +24,6 @@ nnoremap <Space> @d
 
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
+
+vmap <leader>y :w! /tmp/vitmp<CR>
+nmap <leader>p :r! cat /tmp/vitmp<CR>

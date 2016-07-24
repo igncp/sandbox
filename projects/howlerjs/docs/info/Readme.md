@@ -7,6 +7,8 @@
 ## Resources
 - [Homepage](https://howlerjs.com/)
 - [Wiki](https://github.com/goldfire/howler.js#contents)
+- [Open Issues](https://github.com/goldfire/howler.js/issues)
+- [Merged PRs](https://github.com/goldfire/howler.js/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Amerged%20)
 
 ## TODOs
 - [x] Provision project

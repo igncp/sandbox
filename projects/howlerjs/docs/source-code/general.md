@@ -1,5 +1,11 @@
 # Source Code - General
 
+## Glossary
+
+- [AudioContext](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext)
+- [AudioNode](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode)
+- [GainNode](https://developer.mozilla.org/en-US/docs/Web/API/GainNode)
+
 ## Dependencies
 
 ### devDependencies
@@ -62,7 +68,7 @@
 - muted
 - navigator
 - node
-- panner
+- panner: [PannerNode spec](https://developer.mozilla.org/en-US/docs/Web/API/PannerNode)
 - parent
 - paused
 - playStart
@@ -87,3 +93,4 @@
 ## Key functions
 
 - setupAudioContext: "Setup the audio context when available, or switch to HTML5 Audio mode."
+
