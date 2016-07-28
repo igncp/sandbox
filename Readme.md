@@ -2,12 +2,18 @@
 
 A repository to study external projects. The key points are:
 
-- Automation: Automate as much as possible, even the trivial things
-- Performance: Don't do the same twice if it was already done or can be done once and saved in memory / disk
-- Few interdependencies: Keep it simple, even if that means more code repetition for sections that may change in the future
-- Running the scripts twice or more should result in the same state as running them once
+- **Automation**: Automate as much as possible, even the trivial things
+- **Performance**: Don't do the same twice if it was already done or can be done once and saved in memory / disk
+- **No interdependencies**: Keep it simple, even if that means more code repetition for sections that may change in the future
+- **One state**: Running the scripts twice or more should result in the same state as running them once
 
 Some of the commands used to explore the projects are from [the explorers repository](https://github.com/igncp/explorers).
+
+## Projects
+- [Angular 2](projects/angular/notes)
+- [Howlerjs](projects/howlerjs/docs/info/)
+- [Redux](projects/redux/notes)
+- [ShellCheck](projects/shellcheck/docs/info)
 
 ## License
 
