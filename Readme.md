@@ -10,10 +10,13 @@ A repository to study external projects. The key points are:
 Some of the commands used to explore the projects are from [the explorers repository](https://github.com/igncp/explorers).
 
 ## Projects
-- [Angular 2](projects/angular/notes)
+
+The projects are sorted from more to less recently updated:
+
 - [Howlerjs](projects/howlerjs/docs/info/)
-- [Redux](projects/redux/notes)
 - [ShellCheck](projects/shellcheck/docs/info)
+- [Redux](projects/redux/notes)
+- [Angular 2](projects/angular/notes)
 
 ## License
 

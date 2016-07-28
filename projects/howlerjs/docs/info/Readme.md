@@ -11,6 +11,8 @@
 - [Merged PRs](https://github.com/goldfire/howler.js/pulls?utf8=%E2%9C%93&q=is%3Apr%20is%3Amerged%20)
 
 ## TODOs
+- [ ] Benchmark common methods
+- [x] Create custom basic example and review examples
 - [x] Provision project
 
  
