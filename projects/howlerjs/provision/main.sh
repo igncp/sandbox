@@ -59,6 +59,7 @@ cpFileFromProvision .tmux.conf
   installVimPackage scrooloose/nerdcommenter
   installVimPackage vim-scripts/cream-showinvisibles
   installVimPackage nathanaelkane/vim-indent-guides
+  installVimPackage airblade/vim-gitgutter
 
   installVimPackage Shougo/vimproc.vim
   cd ~/.vim/bundle/vimproc.vim && make; cd -

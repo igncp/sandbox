@@ -18,10 +18,10 @@ index 0000000..d9bb42c
 +</html>
 diff --git a/benchmark/index.js b/benchmark/index.js
 new file mode 100644
-index 0000000..dd05c96
+index 0000000..a00194e
 --- /dev/null
 +++ b/benchmark/index.js
-@@ -0,0 +1,27 @@
+@@ -0,0 +1,28 @@
 +var suite = new Benchmark.Suite
 +
 +var howl = new Howl({src: ["/tests/audio/sound1.mp3"]})
@@ -30,9 +30,10 @@ index 0000000..dd05c96
 +console.log("howl", howl)
 +console.log("howl methods", Object.keys(howl.__proto__))
 +
-+console.log("Starting benchmar")
++console.log("Starting benchmark")
 +
-+suite.add('new Howler', function() {
++suite.add('howl.duration()', function() {
++  // to see the difference, change the src file
 +  howl.duration()
 +})
 +// add listeners
@@ -50,19 +51,17 @@ index 0000000..dd05c96
 +.run({ 'async': true })
 +
 diff --git a/package.json b/package.json
-index f171a9e..f679391 100644
+index f171a9e..c81d680 100644
 --- a/package.json
 +++ b/package.json
-@@ -36,5 +36,8 @@
-     "dist/howler.core.min.js",
-     "dist/howler.spatial.min.js",
-     "LICENSE.md"
--  ]
-+  ],
-+  "dependencies": {
-+    "benchmark": "^2.1.1"
-+  }
- }
+@@ -21,6 +21,7 @@
+     "release": "VERSION=`printf 'v' && node -e 'console.log(require(\"./package.json\").version)'` && git tag $VERSION && git push && git push origin $VERSION && npm publish"
+   },
+   "devDependencies": {
++    "benchmark": "^2.1.1",
+     "uglify-js": "2.x"
+   },
+   "main": "dist/howler.js",
 diff --git a/src/howler.core.js b/src/howler.core.js
 index e0fd706..01b76c6 100644
 --- a/src/howler.core.js
