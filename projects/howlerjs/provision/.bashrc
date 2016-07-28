@@ -7,6 +7,8 @@ alias rm="rm -rf"
 alias ll="ls -lah"
 alias ls="ls -lah"
 
+alias GitCreatePatchOfRepo="git add -A . && git diff HEAD"
+
 export PATH=$PATH:/home/$USER/.nodenv/bin
 export PATH=$PATH:/home/$USER/.nodenv/versions/6.3.0/bin/
 

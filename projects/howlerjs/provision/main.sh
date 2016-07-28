@@ -50,6 +50,10 @@ cpFileFromProvision .tmux.conf
   installVimPackage vim-markdown plasticboy/vim-markdown
   installVimPackage syntastic scrooloose/syntastic
   installVimPackage ctrlp.vim ctrlpvim/ctrlp.vim
+  installVimPackage auto-pairs jiangmiao/auto-pairs
+  installVimPackage vim-better-whitespace ntpeters/vim-better-whitespace
+  installVimPackage nerdcommenter scrooloose/nerdcommenter
+
   installVimPackage vimproc Shougo/vimproc.vim
   cd ~/.vim/bundle/vimproc && make; cd -
 # vim end

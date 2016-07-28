@@ -1,0 +1,80 @@
+diff --git a/benchmark/index.html b/benchmark/index.html
+new file mode 100644
+index 0000000..d9bb42c
+--- /dev/null
++++ b/benchmark/index.html
+@@ -0,0 +1,12 @@
++<html>
++<head>
++<title>Benchmark</title>
++<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.0/lodash.js"></script>
++<script src="https://cdnjs.cloudflare.com/ajax/libs/benchmark/2.1.1/benchmark.min.js"></script>
++<script src="/src/howler.core.js"></script>
++</head>
++<body>
++Benchmark
++<script src="index.js"></script>
++</body>
++</html>
+diff --git a/benchmark/index.js b/benchmark/index.js
+new file mode 100644
+index 0000000..dd05c96
+--- /dev/null
++++ b/benchmark/index.js
+@@ -0,0 +1,27 @@
++var suite = new Benchmark.Suite
++
++var howl = new Howl({src: ["/tests/audio/sound1.mp3"]})
++
++window.howl = howl
++console.log("howl", howl)
++console.log("howl methods", Object.keys(howl.__proto__))
++
++console.log("Starting benchmar")
++
++suite.add('new Howler', function() {
++  howl.duration()
++})
++// add listeners
++.on('cycle', function(event) {
++  console.log("Finished cycle")
++  console.log(String(event.target))
++})
++.on('complete', function() {
++  console.log('Fastest is ' + this.filter('fastest').map('name'))
++})
++.on("error", function(e){
++  console.log("error!", e)
++})
++// run async
++.run({ 'async': true })
++
+diff --git a/package.json b/package.json
+index f171a9e..f679391 100644
+--- a/package.json
++++ b/package.json
+@@ -36,5 +36,8 @@
+     "dist/howler.core.min.js",
+     "dist/howler.spatial.min.js",
+     "LICENSE.md"
+-  ]
++  ],
++  "dependencies": {
++    "benchmark": "^2.1.1"
++  }
+ }
+diff --git a/src/howler.core.js b/src/howler.core.js
+index e0fd706..01b76c6 100644
+--- a/src/howler.core.js
++++ b/src/howler.core.js
+@@ -1370,6 +1370,10 @@
+       var self = this;
+       var duration = self._duration;
+ 
++      if (!id) {
++        return duration
++      }
++
+       // If we pass an ID, get the sound and return the sprite length.
+       var sound = self._soundById(id);
+       if (sound) {
