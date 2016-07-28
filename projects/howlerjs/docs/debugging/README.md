@@ -11,5 +11,3 @@
 - HowlerGlobal.prototype._setup: sets the Howler state as "running"
 - HowlerGlobal.prototype._autoSuspend: creates a 30 seconds timeout to suspend the context if no sound is played to save resources
 - HowlerGloba.prototype._setupCodecs: sets a map of codecs that are available and attaches it to the `Howler`
--
-
