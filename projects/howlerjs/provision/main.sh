@@ -1,6 +1,5 @@
 #!/bin/bash
 
-installVimPackage() { DIR=$1; REPO=$2; if [ ! -d ~/.vim/bundle/"$DIR" ]; then git clone https://github.com/$REPO.git ~/.vim/bundle/"$DIR"; fi }
 cpFileFromProvision() { FILE=$1; cp /project/provision/$FILE ~/$FILE; }
 installNPMModulesIfNecessary() {
   PACKAGE_DIR=$1;
@@ -15,6 +14,11 @@ installNPMModuleGlobally() {
     echo "doing: npm i -g $MODULE_NAME"
     npm i -g $MODULE_NAME
   fi
+}
+installVimPackage() {
+  REPO=$1
+  DIR=$(echo $REPO | sed -r "s|.+/(.+)|\1|") # foo/bar => bar
+  if [ ! -d ~/.vim/bundle/"$DIR" ]; then git clone https://github.com/$REPO.git ~/.vim/bundle/"$DIR"; fi
 }
 
 if ! type tree ; then
@@ -47,15 +51,17 @@ cpFileFromProvision .tmux.conf
   mkdir -p ~/.vim/autoload/ ~/.vim/bundle
   if [ ! -f ~/.vim/autoload/pathogen.vim ]; then curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim; fi
 
-  installVimPackage vim-markdown plasticboy/vim-markdown
-  installVimPackage syntastic scrooloose/syntastic
-  installVimPackage ctrlp.vim ctrlpvim/ctrlp.vim
-  installVimPackage auto-pairs jiangmiao/auto-pairs
-  installVimPackage vim-better-whitespace ntpeters/vim-better-whitespace
-  installVimPackage nerdcommenter scrooloose/nerdcommenter
+  installVimPackage plasticboy/vim-markdown
+  installVimPackage scrooloose/syntastic
+  installVimPackage ctrlpvim/ctrlp.vim
+  installVimPackage jiangmiao/auto-pairs
+  installVimPackage ntpeters/vim-better-whitespace
+  installVimPackage scrooloose/nerdcommenter
+  installVimPackage vim-scripts/cream-showinvisibles
+  installVimPackage nathanaelkane/vim-indent-guides
 
-  installVimPackage vimproc Shougo/vimproc.vim
-  cd ~/.vim/bundle/vimproc && make; cd -
+  installVimPackage Shougo/vimproc.vim
+  cd ~/.vim/bundle/vimproc.vim && make; cd -
 # vim end
 
 if [ ! -f ~/node-installation-finished ]; then
