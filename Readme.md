@@ -13,6 +13,7 @@ Some of the commands used to explore the projects are from [the explorers reposi
 
 The projects are sorted from more to less recently updated:
 
+- [MobX](projects/mobx/docs/)
 - [Howlerjs](projects/howlerjs/docs/info/)
 - [ShellCheck](projects/shellcheck/docs/info)
 - [Redux](projects/redux/notes)
