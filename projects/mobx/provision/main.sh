@@ -95,6 +95,6 @@ rm -f ~/repository/own_examples
 ln -s /project/examples ~/repository/own_examples
 
 rm -f ~/repository/own_diagrams
-ln -s /project/docs ~/repository/own_diagrams
+ln -s /project/docs/diagrams ~/repository/own_diagrams
 
 echo "finished provisioning"
