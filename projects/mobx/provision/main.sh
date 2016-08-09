@@ -85,7 +85,7 @@ if [ ! -f ~/node-installation-finished ]; then
 fi
 
 installNPMModulesIfNecessary ~/repository
-installNPMModulesGlobally http-server forever eslint babel-eslint
+installNPMModulesGlobally http-server forever eslint babel-eslint phantomjs mermaid
 
 if [[ $(ps aux | grep "node_modules\/forever" | grep "http-server" | wc -l) = "0" ]]; then
   forever start ~/.nodenv/versions/6.3.0/bin/http-server -p9000 -s -c-1 --cors -- ~/repository
