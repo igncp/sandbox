@@ -1,0 +1,21 @@
+graph TD
+  IDepTreeNode("I: IDepTreeNode")
+  IObservable("I: IObservable")
+  IDerivation("I: IDerivation")
+  IAtom("I: IAtom")
+  IComputedValue("I: IComputedValue")
+
+  Reaction["C: Reaction"]
+  Atom["C: Atom"]
+  ComputedValue["C: ComputedValue"]
+
+  IObservable --> IDepTreeNode
+  IDerivation --> IObservable
+  IDerivation --> IDepTreeNode
+  IAtom --> IObservable
+  Reaction -.-> IDerivation
+  Atom -.-> IAtom
+  ComputedValue -.-> IObservable
+  ComputedValue -.-> IComputedValue
+  ComputedValue -.-> IDerivation
+
